@@ -36,16 +36,6 @@ body{
     letter-spacing: 2px;
 }
 
-@keyframes animation {
-    to{
-        -webkit-transition-property: all;
-        -webkit-transition-duration: .2s;
-        -moz-transition-timing-function: cubic-bezier(100,50,21,6);
-        -moz-transition-property: all;
-        -moz-transition-timing-function: cubic-bezier(100,50,21,6);
-    }
-}
-
 .btn:hover{
     margin-left: 4px;
     padding: 10px 20px;
