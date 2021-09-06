@@ -1,5 +1,6 @@
 body{
     margin: auto;
+    background-color: rgba(119, 136, 153, 0.459);
 }
 
 #head {
@@ -21,27 +22,70 @@ body{
     font-family: headerFont;
 }
 
-#menu{
-    text-align: center;
-    margin-top: 15px;
+.drop-down {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.btn{
-    margin-left: 4px;
-    padding: 10px 20px;
-    font-size: 22px;
-    color: white;
-    text-decoration: none;
+ 
+#menu {
+    font-size: 20px;
+    display: inline-block;
     background-color: #090f22;
+    color: white;
     letter-spacing: 2px;
+    padding: 15px 20px;
+    margin: 5px;
+    position: relative;
+    cursor: pointer;
+}
+ 
+#menu:hover {
+    background-color: white;
+    color: black;
+    padding: 15px 20px;
+    margin: 5px;
+    box-shadow: 0 0 1em silver;
+    transition: background 0.3s;
+}
+ 
+#menu ul {
+    display: none;
+    position: absolute;
+    top: 42px;
+    left: 0px;
+    background-color: white;
+    padding: 10px;
+    width: 115px;
+}
+ 
+#menu:hover ul, #menu.over ul
+{
+    display: block;
+}
+ 
+#menu ul li {
+    display: block;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin: auto;
+    width: auto;
+}
+ 
+#menu ul li:hover{
+    background-color: white;
+    padding: auto;
+    color: black;
 }
 
-.btn:hover{
-    margin-left: 4px;
-    padding: 10px 20px;
-    font-size: 22px;
-    color: black;
+#menu a{
     text-decoration: none;
-    background-color: #96a4af71;
-    letter-spacing: 2px;
+    color: black;
+}
+
+#menu a:hover{
+    color: black; 
+    text-shadow: #96a4af 0.1em 0.1em 0.2em
 }
