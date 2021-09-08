@@ -22,6 +22,17 @@ body{
     src: url(Beatrica.otf);
 }
 
+@keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       transform: translateX(-500px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ }   
+
 #titulo {
     position: absolute;
     padding-left: 22%;
@@ -29,6 +40,7 @@ body{
     font-size: 120px;
     margin: auto;
     font-family: headerFont;
+    animation: fadeInLeft 0.8s;
 }
 
 .drop-down {
@@ -104,14 +116,23 @@ body{
     color: black;
 }
 
-#menu a{
+#menu .sub-menu{
     text-decoration: none;
     color: black;
 }
 
-#menu a:hover{
+a{
+    text-decoration: none;
+    color: white;
+}
+
+#menu:hover a{
+    color: black;
+}
+
+#menu .sub-menu:hover{
     color: black; 
-    text-shadow: #96a4af 0.1em 0.1em 0.2em
+    text-shadow: #819db3 0.1em 0.1em 0.2em;
 }
 
 .bodyText{
