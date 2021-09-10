@@ -10,6 +10,8 @@
 
     <title>Portal Libras</title> <!-- Colocar o nome do site -->
     
+    <script src="scriptHome.js"></script>
+
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
@@ -53,7 +55,7 @@
                 </li>
                 <li id="menu"><a href="#">Sobre</a></li>
                 <!--<li id="menu"><a href="#"><img id="log" src="login.png"></a></li>-->
-                <a href="#"><img class="log" src="login.png"></a>
+                <a onclick="login()"><img class="log" src="login.png"></a>
             </ul>
         </div>
 
@@ -63,14 +65,19 @@
                 <h1>O que é?</h1>
                 <p class="texto">As linguas de sinais são idiomas baseados em movimentos das mãos e em expressões faciais e corporais. É uma língua como qualquer outra - como português, inglês ou espanhol -, mas não necessitam da expressão vocal.<br><br>
 
-                    No Brasil, a língua de sinais utilizada é a Libras (Língua Brasileira de Sinais). Essas línguas variam de acordo com o estado e país, como por exemplo a ASL (American Sing Language), que é utilizada nos Estados Unidos.
+                    No Brasil, a língua de sinais utilizada é a <b>LIBRAS (Língua Brasileira de Sinais)</b>. Essas línguas variam de acordo com o estado e país, como por exemplo a ASL (American Sing Language), que é utilizada nos Estados Unidos.
                     A história da língua de sinais, está diretamente ligada à comunicação das pessoas surdas, sendo formada para a melhoria de sua comunicação.<br><br>
                     
                     No Brasil, a Libras foi reconhecida por lei no ano de 2002 e, em 2005, se tornou obrigatória em cursos superiores de licenciatura, pedagogia e fonoaudiologia. Porém, até o momento atual, nunca foi reconhecida como segundo idioma oficial no Brasil.
                 </p>
 
                 <img src="conversaLibras.jpg">
-
+                <svg id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
+                        <stop id="stop1" stop-color="rgba(9, 15, 34, 1)" offset="0%"></stop>
+                        <stop id="stop2" stop-color="rgba(251, 168, 31, 1)" offset="100%"></stop>
+                        </linearGradient></defs>
+                        <path fill="rgba(9, 15, 34, 1)" d="M23.4,-26.5C30.4,-22.1,36.2,-14.7,37.8,-6.6C39.3,1.6,36.6,10.6,32.2,18.7C27.7,26.9,21.4,34.1,13.2,37.9C4.9,41.6,-5.2,41.8,-13.3,38.2C-21.3,34.5,-27.4,26.9,-32.7,18.5C-38.1,10.1,-42.8,0.9,-41.6,-7.7C-40.5,-16.2,-33.7,-24.1,-25.8,-28.3C-17.9,-32.6,-8.9,-33.3,-0.4,-32.8C8.2,-32.4,16.4,-30.9,23.4,-26.5Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="0" style="transition: all 0.3s ease 0s;" stroke="url(#sw-gradient)"></path></svg>
             </div>
 
             <!--<div class="column">
@@ -85,12 +92,9 @@
         </div>
 
         <footer>
-                <div id="coluna-direita">
-                    <p> O Portal Libras foi criado com intuito de ajudar as pessoas a entender melhor a linguagem de sinais.<br>
-                        Desenvolvido por: Nicoli, Nycolle e Laura <img src="like.png"></p>
+                    <p>Desenvolvido por: Nicoli, Nycolle e Laura <img src="like.png"></p>
                     Icons made by <a class="foot" href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a class="foot" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
                 </div>
-                <div id="coluna-esquerda">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
         </footer>
 </body>
 </html>

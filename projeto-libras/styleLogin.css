@@ -1,0 +1,15 @@
+body{
+    margin: auto;
+    background-color: rgba(119, 136, 153, 0.459);
+}
+
+form{
+    text-align: center;
+    position: relative;
+    margin-top: 15%;
+    background-color: beige;
+    padding: 100px;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 20px;
+}
