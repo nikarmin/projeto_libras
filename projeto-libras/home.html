@@ -6,12 +6,10 @@
     <link rel="stylesheet" href="styleHome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="sortcut icon" href="icon.png" type="image/gif"/>
-    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
 
     <title>Portal Libras</title> <!-- Colocar o nome do site -->
     
     <script src="scriptHome.js"></script>
-
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
@@ -36,6 +34,7 @@
             <svg id="wave" viewBox="0 0 1440 200" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(13, 19, 38, 1)" offset="0%"></stop><stop stop-color="rgba(113, 139, 217, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,40L48,53.3C96,67,192,93,288,110C384,127,480,133,576,116.7C672,100,768,60,864,56.7C960,53,1056,87,1152,96.7C1248,107,1344,93,1440,73.3C1536,53,1632,27,1728,13.3C1824,0,1920,0,2016,3.3C2112,7,2208,13,2304,33.3C2400,53,2496,87,2592,100C2688,113,2784,107,2880,103.3C2976,100,3072,100,3168,86.7C3264,73,3360,47,3456,30C3552,13,3648,7,3744,3.3C3840,0,3936,0,4032,23.3C4128,47,4224,93,4320,103.3C4416,113,4512,87,4608,80C4704,73,4800,87,4896,100C4992,113,5088,127,5184,133.3C5280,140,5376,140,5472,126.7C5568,113,5664,87,5760,86.7C5856,87,5952,113,6048,116.7C6144,120,6240,100,6336,103.3C6432,107,6528,133,6624,126.7C6720,120,6816,80,6864,60L6912,40L6912,200L6864,200C6816,200,6720,200,6624,200C6528,200,6432,200,6336,200C6240,200,6144,200,6048,200C5952,200,5856,200,5760,200C5664,200,5568,200,5472,200C5376,200,5280,200,5184,200C5088,200,4992,200,4896,200C4800,200,4704,200,4608,200C4512,200,4416,200,4320,200C4224,200,4128,200,4032,200C3936,200,3840,200,3744,200C3648,200,3552,200,3456,200C3360,200,3264,200,3168,200C3072,200,2976,200,2880,200C2784,200,2688,200,2592,200C2496,200,2400,200,2304,200C2208,200,2112,200,2016,200C1920,200,1824,200,1728,200C1632,200,1536,200,1440,200C1344,200,1248,200,1152,200C1056,200,960,200,864,200C768,200,672,200,576,200C480,200,384,200,288,200C192,200,96,200,48,200L0,200Z"></path></svg>
         </div>
 
+        <!-- MENU -->
         <div class="drop-down">
             <ul>
                 <li id="menu"><a href="#">Home</a></li>
@@ -54,11 +53,32 @@
                     </ul>
                 </li>
                 <li id="menu"><a href="#">Sobre</a></li>
+
                 <!--<li id="menu"><a href="#"><img id="log" src="login.png"></a></li>-->
-                <a onclick="login()"><img class="log" src="login.png"></a>
+                
+
+                <!-- LOGIN SUSPENSO -->
+                <a onclick="document.getElementById('painelLogin').style.display='block'" style="width: auto;"><img class="log" src="login.png"></a>
+                    
+                    <div id="painelLogin" class="painel">
+                        <form class="content" method="POST" action="">
+                            <h1>LOGIN</h1>
+                            <div class="container">
+                                <label for="uemail">Email:</label>
+                                <input type="text" placeholder="Digite seu email..." name="uemail" required>
+                                <Br>
+                                <label for="usenha">Senha:</label>
+                                <input type="text" placeholder="Digite sua senha..." name="usenha" required>
+                                <br>
+                                <button type="submit">LOGIN</button>
+                                <button type="button" onclick="document.getElementById('painelLogin').style.display='none'" id="cancelBtn">CANCELAR</button>
+                            </div>
+                        </form>
+                    </div>
             </ul>
         </div>
 
+        <!-- "CORPO" DA PÁGINA -->
         <div class="bodyText">
             <div class="column">
 
@@ -71,13 +91,7 @@
                     No Brasil, a Libras foi reconhecida por lei no ano de 2002 e, em 2005, se tornou obrigatória em cursos superiores de licenciatura, pedagogia e fonoaudiologia. Porém, até o momento atual, nunca foi reconhecida como segundo idioma oficial no Brasil.
                 </p>
 
-                <img src="conversaLibras.jpg">
-                <svg id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
-                        <stop id="stop1" stop-color="rgba(9, 15, 34, 1)" offset="0%"></stop>
-                        <stop id="stop2" stop-color="rgba(251, 168, 31, 1)" offset="100%"></stop>
-                        </linearGradient></defs>
-                        <path fill="rgba(9, 15, 34, 1)" d="M23.4,-26.5C30.4,-22.1,36.2,-14.7,37.8,-6.6C39.3,1.6,36.6,10.6,32.2,18.7C27.7,26.9,21.4,34.1,13.2,37.9C4.9,41.6,-5.2,41.8,-13.3,38.2C-21.3,34.5,-27.4,26.9,-32.7,18.5C-38.1,10.1,-42.8,0.9,-41.6,-7.7C-40.5,-16.2,-33.7,-24.1,-25.8,-28.3C-17.9,-32.6,-8.9,-33.3,-0.4,-32.8C8.2,-32.4,16.4,-30.9,23.4,-26.5Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="0" style="transition: all 0.3s ease 0s;" stroke="url(#sw-gradient)"></path></svg>
+                <img src="conversaLibras.png">
             </div>
 
             <!--<div class="column">
