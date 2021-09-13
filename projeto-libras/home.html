@@ -9,7 +9,8 @@
 
     <title>Portal Libras</title> <!-- Colocar o nome do site -->
     
-    <script src="scriptHome.js"></script>
+    <script src="script.js"></script>
+
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
@@ -38,28 +39,28 @@
         <div class="drop-down">
             <ul>
                 <!-- Arrumar os links (não tá em todo "botão") -->
-                <li id="menu"><a href="#">Home</a></li>
+                <a href="home.html"><li id="menu">Home</li></a>
                 <li id="menu">Aulas
                     <ul>
-                        <li><a class="sub-menu" href="modulo1.html">Módulo I</a></li>
+                        <a class="sub-menu" href="modulo1.html"><li>Módulo I</li></a>
                         <li><a class="sub-menu" href="#">Módulo II</a></li>
                         <li><a class="sub-menu" href="#">Módulo III</a></li>
                     </ul>
                 </li>
-                <li id="menu"><a href="#">Material Externo</a>
+                <li id="menu">Material Externo
                     <ul>
                         <li><a class="sub-menu" href="#">Youtube</a></li>
                         <li><a class="sub-menu" href="#">Instagram</a></li>
                         <li><a class="sub-menu" href="#">Sites</a></li>
                     </ul>
                 </li>
-                <li id="menu"><a href="about.html">Sobre</a></li>
+                <a href="about.html"><li id="menu">Sobre</li></a>
 
                 <!--<li id="menu"><a href="#"><img id="log" src="login.png"></a></li>-->
                 
 
                 <!-- LOGIN SUSPENSO -->
-                <a onclick="document.getElementById('painelLogin').style.display='block'" style="width: auto;"><img class="log" src="login.png"></a>
+                <a onclick="btnLogin()"><img class="log" src="login.png"></a>
                     
                     <div id="painelLogin" class="painel">
                         <form class="content" method="POST" action="">

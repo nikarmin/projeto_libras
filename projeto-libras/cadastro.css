@@ -1,6 +1,5 @@
 body{
     background: url(https://images.pexels.com/photos/4040649/pexels-photo-4040649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-    background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -88,7 +87,7 @@ span.usenha a{
     text-align: center;
     margin: 5% auto 15% auto;
     width: 50%; 
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.637);
     -webkit-box-shadow: 35px 36px 0px 0px rgba(145, 181, 222, 0.692);
     -moz-box-shadow: 35px 36px 0px 0px rgba(145, 181, 222, 0.692);
     box-shadow: 35px 36px 0px 0px rgba(145, 181, 222, 0.692);
