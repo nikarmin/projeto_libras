@@ -158,11 +158,13 @@ a{
 
 /*RODAPÉ*/
 footer img{
+    width: 150px;
     height: auto;
-    width: auto;
-    max-width: 20px;
-    max-height: 10px;
+    max-width: 15%;
+    border-radius: 50%;
     padding-left: 5px;
+    pointer-events: none;
+    margin-bottom: 15px;
 }
 
 .foot{
