@@ -6,15 +6,16 @@ body{
 
 /*Ondinha*/
 #wave{
+    margin-top: 100px;
     position: relative;
-    padding-top: 80px;
+    margin-bottom: -4px;
 }
 
 #head {
     padding-top: 40px;
-    /*margin-top: 40px;*/
     width: 100%;
-    background-color: #96a4af5d;
+    background: rgb(150,164,175);
+    background: linear-gradient(114deg, rgba(150,164,175,1) 0%, rgba(75,104,196,0.3925945378151261) 60%);
 }
 
 @font-face {
