@@ -1,5 +1,7 @@
 /*Arrumar o JavaScript*/ 
 
+console.log("felizardos");
+
 function btnLogin(a)
 {
     console.log(a);
