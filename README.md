@@ -1,6 +1,8 @@
 # Projeto Libras - Prática Profissional I
 
-![Alt Text](https://i.ibb.co/fGtzvLt/logo.gif)
+<h1 align="center">
+  <img src="https://i.ibb.co/fGtzvLt/logo.gif" />
+</h1>
 
 * O projeto visa a aprendizagem de Libras, sempre buscando a simplicidade para os usuários.
 
