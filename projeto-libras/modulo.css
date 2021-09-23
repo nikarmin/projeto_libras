@@ -361,7 +361,8 @@ h1{
 .items{
     display: inline-flex;
     position: relative;
-    margin-bottom: 23%;
+    margin-top: 2%;
+    margin-bottom: 20%;
     justify-content: center;
 }
 
@@ -370,47 +371,22 @@ h1{
     user-select: none;
 }
 
-/*.items{
-    position: relative;
+.button{
+    padding-bottom: 5px;
 }
-
-.mySlides {
-    display: none;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    user-select: none;
-}
-
-
-.items .mySlides {
-    width: 137px;
-    height: 174px;
-    border-radius: 15%;
-    transition: all 300ms ease-in-out;
-    z-index: -1;
-}
-
-.mySlides img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-*/
-
-/*ARRUMAR O BAGULHO*/
 
 .items .button-container {
-    position: absolute;
-    top: 50%;
+    position: relative;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 275px;
     z-index: 100;
+    user-select: none;
 }
 
 .button-container .button {
     color: #fff;
+    top: 200%;
     font-size: 32px;
     cursor: pointer;
     position: relative;

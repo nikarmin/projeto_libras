@@ -7,7 +7,8 @@ function btnLogin(a)
 } 
 
 /*SlideShow Icarly*/
-/*Icarly ARRUMADO, falta uns ajustes*/
+/*Icarly ARRUMADO, falta uns ajustes (aparece o Z e dps pula 
+pro B, sendo que tem o A)*/
 
 var slideIndex = 1;
 showSlides(slideIndex);
