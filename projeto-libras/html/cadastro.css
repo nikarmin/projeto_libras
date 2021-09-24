@@ -1,10 +1,18 @@
+.cadastro{
+    height: auto;
+    width: 350px;
+    padding: 30px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 35%;
+    top: 15%;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}
+
 body{
-    /*background: url(https://images.unsplash.com/photo-1527100673774-cce25eafaf7f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80);
+    background-image: url(ondinha.jpg);
     background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;*/
-    background-color: rgb(33, 33, 77);
-    overflow: hidden;
 }
 
 @font-face {
@@ -13,23 +21,27 @@ body{
 }
 
 @font-face {
-    font-family: roboto;
-    src: url(Roboto-Thin.ttf);
+    font-family: reg;
+    src: url(JAi_____.TTF);
 }
 
-p{
-    font-family: headerFont;
-    font-size: 100px;
-    margin-bottom: 5px;
+label{
+    font-size: 20px;
+    margin-right: 8px;
+    color: #444444;
+    font-family: reg;
+}
+
+label, input, select{
+    margin-bottom: 8px;
 }
 
 input:focus{
     outline: 0;
 }
 
-input[type=text], input[type=password] {
-    padding: 12px 20px;
-    margin: 8px 0;
+input, select{
+    padding: 8px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -40,61 +52,35 @@ select:focus{
     outline: 0;
 }
 
-#selectEstado{
-    padding: 12px 20px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 5px;
+h2{
+    font-family: reg;
+    font-size: 20px;
+    color: #444444;
 }
 
-label{
-    font-family: roboto;
-    font-size: 27px;
-    margin-right: 18px;
+p{
+    font-family: headerFont;
+    font-size: 70px;
+    margin: 0;
+    text-align: center;
+    color: #444444;
+    text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
 }
 
 .container button{
-    background-color: #757dec;
+    background-color: rgb(81, 218, 104);
     color: white;
-    padding: 15px;
+    padding: 20px;
     border: none;
     cursor: pointer;
-    border-radius: 10px;
-    width: 30%;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    border-radius: 50%;
 }
 
-span.usenha{
-    margin-top: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-span.usenha a{
-    color: #2734ee;
+.container button:hover{
+    opacity: 0.8;
 }
 
 #cancelBtn{
     background-color: rgb(196, 103, 96);
-}
-
-.content{
-    border-radius: 8px;
-    text-align: left;
-    margin: 1% auto;
-    width: 30%; 
-    /*background-color: rgba(255, 255, 255, 0.637);
-    -webkit-box-shadow: 35px 36px 0px 0px rgba(145, 181, 222, 0.692);
-    -moz-box-shadow: 35px 36px 0px 0px rgba(145, 181, 222, 0.692);
-    box-shadow: 35px 36px 0px 0px rgba(145, 181, 222, 0.692);*/
-}
-
-.cadastro p{
-    text-align: center;
-}
-
-.cadastro{
-    background-color: lavender;
-    border-radius: 10px;
+    float: right;
 }

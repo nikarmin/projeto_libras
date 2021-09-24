@@ -200,6 +200,10 @@ footer{
 
 /*LOGIN*/
 
+input[type=text] {
+    -webkit-text-security: disc;
+}
+
 @font-face {
     font-family: roboto;
     src: url(Roboto-Thin.ttf);
