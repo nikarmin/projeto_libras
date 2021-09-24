@@ -358,6 +358,24 @@ h1{
 
 /*SLIDESHOW ICARLY*/
 
+.fadeSlide {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 0.8s;
+}
+  
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+  
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+  
+
 .items{
     display: inline-flex;
     position: relative;
@@ -369,6 +387,10 @@ h1{
 .mySlides{
     position: absolute;
     user-select: none;
+}
+
+.mySlides img{
+    border-radius: 10px;
 }
 
 .button{
