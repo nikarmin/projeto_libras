@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/nikarmin/projeto-libras/issues"
   },
-  "homepage": "https://github.com/nikarmin/projeto-libras#readme"
+  "homepage": "https://github.com/nikarmin/projeto-libras#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
