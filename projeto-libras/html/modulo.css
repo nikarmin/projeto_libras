@@ -200,7 +200,7 @@ footer{
 
 /*LOGIN*/
 
-input[type=text] {
+#login {
     -webkit-text-security: disc;
 }
 

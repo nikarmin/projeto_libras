@@ -66,7 +66,7 @@
                         <input type="text" placeholder="Digite seu email..." name="uemail" required>
                         <br>
                         <label for="usenha">Senha:</label>
-                        <input type="text" placeholder="Digite sua senha..." name="usenha" required>
+                        <input type="text" id="login" placeholder="Digite sua senha..." name="usenha" required>
                         <br>
                         <button type="submit">LOGIN</button>
                         <button type="button" onclick="document.getElementById('painelLogin').style.display='none'" id="cancelBtn">CANCELAR</button>
@@ -106,7 +106,21 @@
             <textarea name="ftext" id="text" cols="30" rows="10"></textarea><br>
             <input id="button" type="submit">
         </form>-->
-       
+
+        <!-- FORMULÁRIO DE SUGESTÕES VIA EMAIL -->
+
+        <div class="commentBox">
+        <form action="">
+            <p>O que você achou do site?</p>
+            
+            <label for="comEmail">E-mail:</label><br>
+            <input type="text" id="commentEmail" placeholder="Digite seu email..." name="comEmail" required><br><br>
+            <label>Mande-nos uma sugestão:</label><br>
+            <textarea name="ftext" id="text" cols="50" rows="5" placeholder="Digite sua sugestão..." required></textarea><br>
+            <button type="submit" id="btnEnviar">Enviar sugestão  <img src="correspondencia-enviada.png"></button>
+        </form>
+       </div>
+
     </div>
     <img id="imgFooter" src="wave.png">
         <footer>
