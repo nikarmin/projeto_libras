@@ -254,6 +254,7 @@ footer{
     margin-bottom: -15px;
     display: inline-block;
     z-index: -5;
+    user-select: none;
 }
 
 /*LOGIN*/

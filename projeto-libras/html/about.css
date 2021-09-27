@@ -196,6 +196,7 @@ footer{
     margin-bottom: -15px;
     display: inline-block;
     z-index: -1;
+    user-select: none;
 }
 
 /*LOGIN*/
@@ -405,10 +406,15 @@ textarea{
     border-radius: 5px;
     letter-spacing: 1px;
     padding: 10px;
-    border: 2px solid #a8baf5af;
+    border-bottom: 5px solid #a8baf5af;
+    resize: none;
 }
 
-#btnEnviar{
+textarea:focus{
+    border-bottom: 5px solid #9db1f3;
+}
+
+input[type="submit"]{
     font-size: 18px;
     margin-top: 10px;
     padding: 10px;
@@ -416,24 +422,36 @@ textarea{
     border-radius: 5px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: rgb(206, 206, 245);
+    cursor: pointer;
 }
 
-#btnEnviar:hover{
+input[type="submit"]:hover{
     background-color: rgb(190, 190, 238);
 }
 
-#commentEmail{
+#sugestionEmail{
     font-family: 'Courier New', Courier, monospace;
     padding: 10px;
     border-radius: 5px;
     font-size: 15px;
     letter-spacing: 1px;
-    border: 2px solid #a8baf5af;
+    border-bottom: 5px solid #a8baf5af;
+}
+
+#sugestionEmail:focus{
+    border-bottom: 5px solid #9db1f3;
+}
+
+.sugestionBox{
+    margin-top: 5%;
+    background-color: rgba(245, 245, 245, 0.623);
+    border-radius: 5px;
+    padding: 25px;
 }
 
 .commentBox{
-    background-color: rgba(245, 245, 245, 0.795);
-    border: 10px solid #a8baf5af;
-    padding: 20px;
-    border-radius: 10px;
+    margin-top: 15px;
+    background-color: rgba(245, 245, 245, 0.623);
+    border-radius: 5px;
+    padding: 25px;
 }
