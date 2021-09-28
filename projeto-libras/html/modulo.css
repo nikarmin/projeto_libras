@@ -403,6 +403,8 @@ h1{
     position: relative;
     margin-bottom: -180px;
     border-radius: 10px;
+    border-bottom: 5px solid #9db1f3;
+    user-select: none;
 }
 
 .mySlidesNone img{
@@ -444,7 +446,7 @@ h1{
     transform: translate(-50%, -50%);
     width: 50px;
     height: 50px;
-    background-color: rgb(150, 24, 24);
+    background-color: rgb(0, 0, 0);
     border-radius: 50%;
     z-index: -99;
 }
