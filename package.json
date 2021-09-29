@@ -1,0 +1,19 @@
+{
+  "name": "projeto-libras",
+  "version": "1.0.0",
+  "description": "![logo](https://user-images.githubusercontent.com/80519705/134438083-c6bc0a6d-c044-4d82-ad1b-3ddabe64da47.gif)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikarmin/projeto_libras.git"
+  },
+  "author": "Nicoli, Laura e Nycolle.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikarmin/projeto_libras/issues"
+  },
+  "homepage": "https://github.com/nikarmin/projeto_libras#readme"
+}
