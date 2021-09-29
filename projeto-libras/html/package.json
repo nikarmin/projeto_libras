@@ -1,0 +1,22 @@
+{
+  "name": "projetolibras",
+  "version": "1.0.0",
+  "description": "Projeto de educação.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikarmin/projeto_libras.git"
+  },
+  "author": "Nicoli, Laura e Nycolle.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikarmin/projeto_libras/issues"
+  },
+  "homepage": "https://github.com/nikarmin/projeto_libras#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
