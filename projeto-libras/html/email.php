@@ -1,5 +1,5 @@
 <?php
-    /*$para = "portalibras@gmail.com";
+    $para = "portalibras@gmail.com";
     $email = $_POST['sugEmail'];
     $message = "<strong>Email:  </strong>".$email;
     $mensagem .= "<br>  <strong>Mensagem: </strong>"
@@ -18,7 +18,7 @@
     $headers .= "MIME-Version: 1.0\n";
 
     mail($para, $assunto, $mensagem, $headers);  //função que faz o envio do email.
-*/
+
     /* Código para postagem de comentários, deu tudo errado...
     
     if($_POST['Submit']){

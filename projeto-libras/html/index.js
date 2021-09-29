@@ -1,6 +1,5 @@
 /*Arrumar o JavaScript*/ 
 
-/*Login*/
 function btnLogin(a)
 {
     console.log(a);
