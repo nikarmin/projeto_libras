@@ -1,7 +1,10 @@
 const http = require('http');
-const port = process.env.PORT || 3000;
-const app = require('./app');
+const app = http.createServer((req, res) =>{
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Olá mundo!\n');
+});
 
-const server = http.createServer(app);
-server.listen(port);
+app.listen(3000, '127.0.0.1');
+console.log('funcionando');
 
+//node server.js
