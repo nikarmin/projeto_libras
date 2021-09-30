@@ -29,7 +29,7 @@ http.createServer(function(req,res){
 console.log('funcionando');
 
 //Enviar email
-
+/*
 var nodemailer = require('nodemailer');
 const { getMaxListeners } = require('process');
 
@@ -55,6 +55,6 @@ transporter.sendMail(mailOptions, function(error, info){
     else{
         console.log('Email tarara: '+info.response);
     }
-});
+});*/
 
 //node server.js
