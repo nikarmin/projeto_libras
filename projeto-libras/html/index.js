@@ -1,5 +1,26 @@
-/*Arrumar o JavaScript*/ 
+/*Arrumar o JavaScript*/
+const { response } = require("./app");
 
+/*Emails teste forms*/
+
+const form = document.getElementById("form-contato");
+const formEvent = form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let mail = new FormData(form);
+    sendMail(mail);
+});
+
+const sendMail = (mail) => {
+    fetch("http://localhost:8080/send",{
+        method: "post",
+        body: mail,
+    }).then((response) =>{
+        return response.json();
+    });
+};
+
+
+/*Aparecer caixa de login xd*/
 function btnLogin(a)
 {
     console.log(a);
