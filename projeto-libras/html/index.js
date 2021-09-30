@@ -1,5 +1,4 @@
 /*Arrumar o JavaScript*/
-const { response } = require("./app");
 
 /*Emails teste forms*/
 

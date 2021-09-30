@@ -57,9 +57,6 @@ transporter.sendMail(mailOptions, function(error, info){
     }
 });*/
 
-/*
-TESTE EMAIL VIA FORMS
-
 const express = require("express");
 const nodemailer = require("nodemailer");
 const multiparty = require("multiparty");
@@ -126,5 +123,6 @@ app.post("/send", (req, res) => {
       });
     });
 });
-*/
+
+
 //node server.js
