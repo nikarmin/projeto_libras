@@ -10,7 +10,7 @@ const rotaPedidos = require('./routes/pedidos');
 app.use('/pedidos', rotaPedidos);
 
 module.exports = app;
-*/
+
 
 const express = require('express');
 const app = express();
@@ -18,7 +18,7 @@ const app = express();
 app.use('/static', express.static('public'));
 module.exports = app;
 
-/*
+
 const express = require('express');
 const app = express();
 const port = 3000;
