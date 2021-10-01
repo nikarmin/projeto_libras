@@ -1,4 +1,10 @@
 /*const http = require('http');
+const app = require('../app');
+const port = process.env.PORT || 3000;
+const server = http.createServer(app);
+server.listen(port);*/
+
+/*const http = require('http');
 http.createServer(function(req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(req.url);
@@ -45,7 +51,7 @@ const transporter = nodemailer.createTransport({
 let mailOptions = {
   from: 'portalibras@gmail.com',
   to: 'nikafworks@gmail.com',
-  subject: 'portal libras filho',
+  subject: 'Portal Libras - FeedBack',
   text: 'merda'
 }
 
