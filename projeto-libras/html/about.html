@@ -10,7 +10,7 @@
 </head>
 
     <script src="index.js"></script>
-
+    <script src="https://www.powr.io/powr.js?platform=html"></script>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
@@ -123,6 +123,7 @@
        </div>
 
        <div class="commentBox">
+            <form action="post" method="POST">
             <h2>Avaliação por comentário:</h2>
             <a href="javascript:void(0)" onclick="avaliar(1)"><img src="star_empty.png" id="starOne"></a>
             <a href="javascript:void(0)" onclick="avaliar(2)"><img src="star_empty.png" id="starTwo"></a>
@@ -130,13 +131,39 @@
             <a href="javascript:void(0)" onclick="avaliar(4)"><img src="star_empty.png" id="starFour"></a>
             <a href="javascript:void(0)" onclick="avaliar(5)"><img src="star_empty.png" id="starFive"></a>
             <br>
-            <form method="POST">
             <textarea name="context" id="text" cols="50" rows="2" maxlength="100" placeholder="Máx. 100 caracteres..." required></textarea><br>
             <input type="submit" value="Enviar comentário &#128232;">
             <!--<p><img src="anonimo.png"> Os comentários são anônimos!</p>-->
             </form>
         </div>
 
+        <div id="disqus_thread"></div>  
+        <br>
+<!--    CASO TUDO DÊ ERRADO....
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+
+ (function() {  DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://portalibras-com.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+
+<!--    CASO TUDO DÊ ERRADO II
+<div class="powr-comments" id="346c5f00_1633118405"></div>
+-->
     </div>
     <img id="imgFooter" src="wave.png">
         <footer>
@@ -146,4 +173,7 @@
                     Icons made by <a target="_blank" class="foot" href="https://icons8.com.br">Icons8</a> ícone por <a target="_blank" class="foot" href="https://icons8.com.br/icon/116909/l%C3%ADngua-de-sinais-l">Libras</a>
         </footer>
 </body>
+
+<!--<script id="dsq-count-scr" src="//portalibras-com.disqus.com/count.js" async></script>-->
+
 </html>
