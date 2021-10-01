@@ -8,6 +8,7 @@ http.createServer(function(req, res) {
 //app.listen(3000, '127.0.0.1');
 
 //adicionando endereço http com /moduloUm.html (exemplo)
+
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
@@ -29,100 +30,32 @@ http.createServer(function(req,res){
 console.log('funcionando');
 
 //Enviar email
-/*
-var nodemailer = require('nodemailer');
-const { getMaxListeners } = require('process');
 
-var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'portalibras@gmail.com',
-        pass: 'portallibras0123'
-    }
-});
-
-var mailOptions = {
-    from: 'portalibras@gmail.com',
-    to: 'cc21689@g.unicamp.br',
-    subject: 'Portal Libras - Teste',
-    text: 'Testando email :)'
-};
-
-transporter.sendMail(mailOptions, function(error, info){
-    if(error){
-        console.log(error);
-    }
-    else{
-        console.log('Email tarara: '+info.response);
-    }
-});*/
-
-const express = require("express");
+require('dotenv').config();
 const nodemailer = require("nodemailer");
-const multiparty = require("multiparty");
-require("dotenv").config();
-
-// instantiate an express app
-const app = express();
-
-//make the contact page the the first page on the app
-app.route("/").get(function (req, res) {
-  res.sendFile(process.cwd() + "/public/index.html");
-});
-
-//port will be 5000 for testing
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}...`);
-});
 
 const transporter = nodemailer.createTransport({
-    host: "portalibras@gmail.com", //replace with your email provider
-    port: 587,
-    auth: {
+  service: 'gmail',
+  auth: {
       user: process.env.EMAIL,
-      pass: process.env.PASS,
-    },
+      pass: process.env.PASSWORD
+  }
 });
 
-// verify connection configuration
-transporter.verify(function (error, success) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Server pronto para enviar suas mensagens...");
-    }
-});
+let mailOptions = {
+  from: 'portalibras@gmail.com',
+  to: 'nikafworks@gmail.com',
+  subject: 'portal libras filho',
+  text: 'merda'
+}
 
-app.post("/send", (req, res) => {
-    //1.
-    let form = new multiparty.Form();
-    let data = {};
-    form.parse(req, function (err, fields) {
-      console.log(fields);
-      Object.keys(fields).forEach(function (property) {
-        data[property] = fields[property].toString();
-      });
-  
-      //2. You can configure the object however you want
-      const mail = {
-        from: data.name,
-        to: process.env.EMAIL,
-        subject: data.subject,
-        text: `${data.name} <${data.email}> \n${data.message}`,
-      };
-  
-      //3.
-      transporter.sendMail(mail, (err, data) => {
-        if (err) {
-          console.log(err);
-          res.status(500).send("Algo deu errado.");
-        } else {
-          res.status(200).send("Email enviado com sucesso!");
-        }
-      });
-    });
-});
-
+transporter.sendMail(mailOptions, function(err, info) {
+  if(err){
+    console.log("DEU RUIM"+err);
+  }
+  else{
+    console.log("DEU CERTO");
+  }
+})
 
 //node server.js

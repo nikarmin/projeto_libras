@@ -3,14 +3,14 @@
 /*Emails teste forms*/
 
 const form = document.getElementById("form-contato");
-const formEvent = form.addEventListener("submit", (event) => {
+const formEvent = form.addEventListener("Enviar sugestão", (event) => {
     event.preventDefault();
     let mail = new FormData(form);
     sendMail(mail);
 });
 
 const sendMail = (mail) => {
-    fetch("http://localhost:8080/send",{
+    fetch("http://localhost:8080//about.html/send",{
         method: "post",
         body: mail,
     }).then((response) =>{
