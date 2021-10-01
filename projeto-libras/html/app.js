@@ -9,16 +9,8 @@ app.use('/produtos', rotaProdutos);
 const rotaPedidos = require('./routes/pedidos');
 app.use('/pedidos', rotaPedidos);
 
-module.exports = app;*/
-
-/*
-const rotaProdutos = require('./routes test/produtos');
-const rotaPedidos = require('./routes test/pedidos');
-
-app.use('/produtos', rotaProdutos);
-app.use('/pedidos', rotaPedidos);
-
-module.exports = app; */
+module.exports = app;
+*/
 
 const express = require('express');
 const app = express();
