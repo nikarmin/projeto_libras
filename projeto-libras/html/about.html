@@ -191,9 +191,6 @@
         };
 
         $.post("/email", data)
-          .then(() => {
-            window.location.href = "/email/sent";
-          })
           .catch(() => {
             window.location.href = "/error";
           });
