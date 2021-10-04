@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="sortcut icon" href="icon.png" type="image/gif"/>
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" type="text/css" href="about.css">
     <title>Sobre | Portal Libras</title>
 </head>
 
@@ -110,13 +110,13 @@
         <!-- FORMULÁRIO DE SUGESTÕES VIA EMAIL -->
 
         <div class="sugestionBox">
-        <form id="form-contato" action="send" method="POST" enctype="multipart/form-data">
+        <form id="form-contato">
             <p>Formulário de Sugestões:</p>
             
             <label for="sugEmail">E-mail:</label><br>
             <input name="sugEmail" type="text" id="sugestionEmail" placeholder="Digite seu email..." name="sugEmail" required><br><br>
             <label>Mande-nos uma sugestão:</label><br>
-            <textarea name="ftext" id="text" cols="50" rows="5" placeholder="Digite sua sugestão..." required></textarea><br>
+            <textarea name="ftext" id="sugText" cols="50" rows="5" placeholder="Digite sua sugestão..." required></textarea><br>
             <!--<button type="submit" id="btnEnviar">Enviar sugestão  <img src="correspondencia-enviada.png"></button>-->
             <input type="submit" value="Enviar sugestão &#128232;">
         </form>

@@ -7,8 +7,41 @@ http.createServer(function(req, res) {
 
 //app.listen(3000, '127.0.0.1');
 
-//adicionando endereço http com /moduloUm.html (exemplo)
+//INICIANDO SERVER
 
+const express = require('express');
+
+const log = console.log();
+const app = express();
+const path = require('path');
+
+const PORT = 8080;
+
+//DATA PARSING
+
+app.use(express.urlencoded({
+  extended: false
+}));
+
+app.post('/email', (req, res) => {
+
+  //enviar email
+  console.log('Data: ', req.body)
+  res.json({
+    message: 'Mensagem recebida!'
+  })
+});
+
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname + '/about.html'));
+});
+
+app.listen(PORT, () => console.log('Server está começando na porta, ', 8080));
+
+//adicionando endereço http com /moduloUm.html (exemplo)
+/*
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
@@ -28,9 +61,9 @@ http.createServer(function(req,res){
 }).listen(8080);
 
 console.log('funcionando');
-
+*/
 //Enviar email
-
+/*
 require('dotenv').config();
 const nodemailer = require("nodemailer");
 
@@ -57,5 +90,5 @@ transporter.sendMail(mailOptions, function(err, info) {
     console.log("DEU CERTO");
   }
 })
-
+*/
 //node server.js

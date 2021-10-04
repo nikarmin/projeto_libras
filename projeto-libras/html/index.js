@@ -2,6 +2,25 @@
 
 /*Emails teste forms*/
 
+//ARRUMARRRRRRRRRRRRRRR
+$("form").on("submit", (e) =>{
+    e.preventDefault();
+
+    const email = $('#sugestionEmail').val().trim();
+    const text = $('#sugText').val().trim();
+
+    const data = {
+        email,
+        text
+    };
+
+    $.post('/email', data, function() {
+        console.log('Server recebeu nossa data');
+    });
+
+});;
+
+/*
 const form = document.getElementById("form-contato");
 const formEvent = form.addEventListener("Enviar sugestão", (event) => {
     event.preventDefault();
@@ -16,7 +35,7 @@ const sendMail = (mail) => {
     }).then((response) =>{
         return response.json();
     });
-};
+};*/
 
 
 /*Aparecer caixa de login xd*/
