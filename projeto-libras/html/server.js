@@ -14,6 +14,7 @@ const express = require('express');
 const log = console.log();
 const app = express();
 const path = require('path');
+const sendMail = require('./email');
 
 const PORT = 8080;
 
@@ -22,17 +23,22 @@ const PORT = 8080;
 app.use(express.urlencoded({
   extended: false
 }));
+app.use(express.json());
+
 
 app.post('/email', (req, res) => {
-
   //enviar email
-  console.log('Data: ', req.body)
-  res.json({
-    message: 'Mensagem recebida!'
-  })
-});
+  const { email, text } = req.body;
+  console.log('Data: ', req.body);
 
-app.use(express.json());
+  sendMail(email, text, function(err, data) {
+      if(err){
+        res.status(500).json({message: 'Erro interno'});
+      } else{
+        res.json({message: 'Email enviado'});
+      }
+  });
+});
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/about.html'));

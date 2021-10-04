@@ -3,7 +3,7 @@
 /*Emails teste forms*/
 
 //ARRUMARRRRRRRRRRRRRRR
-$("form").on("submit", (e) =>{
+$('#form-contato').on('submit', (e) =>{
     e.preventDefault();
 
     const email = $('#sugestionEmail').val().trim();
