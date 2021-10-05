@@ -1,43 +1,5 @@
 /*Arrumar o JavaScript*/
 
-/*Emails teste forms*/
-
-//ARRUMARRRRRRRRRRRRRRR
-$('#form-contato').on('submit', (e) =>{
-    e.preventDefault();
-
-    const email = $('#sugestionEmail').val().trim();
-    const text = $('#sugText').val().trim();
-
-    const data = {
-        email,
-        text
-    };
-
-    $.post('/email', data, function() {
-        console.log('Server recebeu nossa data');
-    });
-
-});;
-
-/*
-const form = document.getElementById("form-contato");
-const formEvent = form.addEventListener("Enviar sugestão", (event) => {
-    event.preventDefault();
-    let mail = new FormData(form);
-    sendMail(mail);
-});
-
-const sendMail = (mail) => {
-    fetch("http://localhost:8080//about.html/send",{
-        method: "post",
-        body: mail,
-    }).then((response) =>{
-        return response.json();
-    });
-};*/
-
-
 /*Aparecer caixa de login xd*/
 function btnLogin(a)
 {
