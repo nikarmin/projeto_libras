@@ -466,6 +466,10 @@ input[type="submit"]:hover{
     user-select: none;
 }
 
+.commentBox img:hover{
+    opacity: 0.5;
+}
+
 .commentBox h2{
     font-size: 25px;
     font-weight: bolder;

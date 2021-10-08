@@ -1,17 +1,21 @@
 //teste des. p web II
-/*
+
 const express = require('express');
 const app = express();
 
-const rotaProdutos = require('./routes/produtos');
+/*  Teste Desenvolvimento p/ internet
+const rotaProdutos = require('./produtos');
 app.use('/produtos', rotaProdutos);
 
-const rotaPedidos = require('./routes/pedidos');
+const rotaPedidos = require('./pedidos');
 app.use('/pedidos', rotaPedidos);
+*/
+const rotaRegistro = require('./routes/registro');
+app.use('/registro', rotaRegistro);
 
 module.exports = app;
 
-
+/*
 const express = require('express');
 const app = express();
 
