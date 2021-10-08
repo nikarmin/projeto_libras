@@ -1,0 +1,9 @@
+{
+    "env":{
+        "process.env.MYSQL_USER" : "root",
+        "process.env.MYSQL_PASSWORD" : "root",
+        "process.env.MYSQL_DATABASE" : "PortalLibras",
+        "process.env.MYSQL_HOST" : "localhost",
+        "process.env.MYSQL_PORT" : 3306
+    }
+}
