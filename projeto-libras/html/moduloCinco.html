@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="sortcut icon" href="icon.png" type="image/gif"/>
+    <link rel="stylesheet" href="modulo.css">
+    
+    <title>Módulo V | Portal Libras</title>
+</head>
+
+    <script src="index.js"></script>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+<body>
+    
+    <!-- Tradutor p/ Libras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- Corpo da página -->
+    <div id="head">
+        <div id="headerName">
+            <p id="titulo">Portal Libras</p> <!-- Mudar caso o nome do proj seja outro -->
+        </div>
+        <svg id="wave" viewBox="0 0 1440 190" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(19.407, 30.152, 64.177, 1)" offset="0%"></stop><stop stop-color="rgba(9, 15, 34, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,19L60,34.8C120,51,240,82,360,88.7C480,95,600,76,720,60.2C840,44,960,32,1080,31.7C1200,32,1320,44,1440,53.8C1560,63,1680,70,1800,66.5C1920,63,2040,51,2160,53.8C2280,57,2400,76,2520,69.7C2640,63,2760,32,2880,41.2C3000,51,3120,101,3240,101.3C3360,101,3480,51,3600,34.8C3720,19,3840,38,3960,60.2C4080,82,4200,108,4320,107.7C4440,108,4560,82,4680,72.8C4800,63,4920,70,5040,79.2C5160,89,5280,101,5400,114C5520,127,5640,139,5760,139.3C5880,139,6000,127,6120,101.3C6240,76,6360,38,6480,41.2C6600,44,6720,89,6840,107.7C6960,127,7080,120,7200,117.2C7320,114,7440,114,7560,98.2C7680,82,7800,51,7920,57C8040,63,8160,108,8280,133C8400,158,8520,165,8580,167.8L8640,171L8640,190L8580,190C8520,190,8400,190,8280,190C8160,190,8040,190,7920,190C7800,190,7680,190,7560,190C7440,190,7320,190,7200,190C7080,190,6960,190,6840,190C6720,190,6600,190,6480,190C6360,190,6240,190,6120,190C6000,190,5880,190,5760,190C5640,190,5520,190,5400,190C5280,190,5160,190,5040,190C4920,190,4800,190,4680,190C4560,190,4440,190,4320,190C4200,190,4080,190,3960,190C3840,190,3720,190,3600,190C3480,190,3360,190,3240,190C3120,190,3000,190,2880,190C2760,190,2640,190,2520,190C2400,190,2280,190,2160,190C2040,190,1920,190,1800,190C1680,190,1560,190,1440,190C1320,190,1200,190,1080,190C960,190,840,190,720,190C600,190,480,190,360,190C240,190,120,190,60,190L0,190Z"></path></svg>
+    </div>
+
+    <svg id="waveReflex" viewBox="0 0 1440 330" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(0.695, 1.177, 2.704, 1)" offset="0%"></stop><stop stop-color="rgba(32.661, 42.957, 75.561, 1)" offset="100%"></stop></linearGradient></defs><path style="opacity:1" fill="url(#sw-gradient-0)" d="M0,99L48,82.5C96,66,192,33,288,38.5C384,44,480,88,576,115.5C672,143,768,154,864,165C960,176,1056,187,1152,176C1248,165,1344,132,1440,143C1536,154,1632,209,1728,203.5C1824,198,1920,132,2016,126.5C2112,121,2208,176,2304,165C2400,154,2496,77,2592,71.5C2688,66,2784,132,2880,176C2976,220,3072,242,3168,242C3264,242,3360,220,3456,214.5C3552,209,3648,220,3744,214.5C3840,209,3936,187,4032,165C4128,143,4224,121,4320,99C4416,77,4512,55,4608,49.5C4704,44,4800,55,4896,82.5C4992,110,5088,154,5184,148.5C5280,143,5376,88,5472,66C5568,44,5664,55,5760,66C5856,77,5952,88,6048,115.5C6144,143,6240,187,6336,187C6432,187,6528,143,6624,154C6720,165,6816,231,6864,264L6912,297L6912,330L6864,330C6816,330,6720,330,6624,330C6528,330,6432,330,6336,330C6240,330,6144,330,6048,330C5952,330,5856,330,5760,330C5664,330,5568,330,5472,330C5376,330,5280,330,5184,330C5088,330,4992,330,4896,330C4800,330,4704,330,4608,330C4512,330,4416,330,4320,330C4224,330,4128,330,4032,330C3936,330,3840,330,3744,330C3648,330,3552,330,3456,330C3360,330,3264,330,3168,330C3072,330,2976,330,2880,330C2784,330,2688,330,2592,330C2496,330,2400,330,2304,330C2208,330,2112,330,2016,330C1920,330,1824,330,1728,330C1632,330,1536,330,1440,330C1344,330,1248,330,1152,330C1056,330,960,330,864,330C768,330,672,330,576,330C480,330,384,330,288,330C192,330,96,330,48,330L0,330Z"></path></svg>
+
+    <!-- MENU -->
+    <div class="drop-down">
+        <ul>
+            <a href="home.html"><li id="menu">Home</li></a>
+            <li id="menu">Aulas <!-- Tirar os links dos menus dos sub-menus -->
+                <ul>
+                    <a class="sub-menu" href="moduloUm.html"><li>Módulo I</li></a>
+                    <li><a class="sub-menu" href="moduloDois.html">Módulo II</a></li>
+                    <li><a class="sub-menu" href="moduloTres.html">Módulo III</a></li>
+                    <li><a class="sub-menu" href="moduloTres.html">Módulo IV</a></li>
+                    <li><a class="sub-menu" href="#">Módulo V</a></li>
+                </ul>
+            </li>
+            <li id="menu"><a href="#">Material Externo</a>
+                <ul>
+                    <li><a class="sub-menu" href="materialYtb.html">Youtube</a></li>
+                    <li><a class="sub-menu" href="materialInsta.html">Instagram</a></li>
+                    <li><a class="sub-menu" href="materialSites.html">Sites</a></li>
+                </ul>
+            </li>
+            <a href="about.html"><li id="menu">Sobre</li></a>
+
+            <!-- LOGIN SUSPENSO -->
+            <a onclick="btnLogin()"><img class="log" src="user.png"></a>
+                    
+            <div id="painelLogin" class="painel">
+                <form class="content" method="POST" action="">
+                    <h1>LOGIN</h1>
+                    <div class="container">
+                        <label for="uemail">Email:</label>
+                        <input type="text" placeholder="Digite seu email..." name="uemail" required>
+                        <br>
+                        <label for="usenha">Senha:</label>
+                        <input type="text" id="login" placeholder="Digite sua senha..." name="usenha" required>
+                        <br>
+                        <button type="submit">LOGIN</button>
+                        <button type="button" onclick="document.getElementById('painelLogin').style.display='none'" id="cancelBtn">CANCELAR</button>
+                        <br>
+                        <span class="usenha">Esqueceu a <a target="_blank" href="#">senha?</a></span><br>
+                        <span class="usenha">Não é cadastrado? <a target="_blank" href="cadastro.html">Cadastre agora!</a></span>
+                    </div>
+                </form>
+            </div>
+    </ul>
+</div>
+
+    <div class="bodyText">
+
+        <div class="column">
+            <h1>Módulo V - Frases Simples</h1>
+            <p class="texto">Em Libras não há preposições (o que liga dois elementos de uma frase, estabelecendo uma relação entre eles), não há verbo “ser” e “estar” como no português. Sinaliza-se direto.
+                Exemplificação:
+            </p>
+
+            <table>
+            <tr>
+                <th>Português</th>
+                <th>Libras</th>
+            </tr>
+            <tr>
+                <td>Nicoli está bonita</td>
+                <td>N-I-C-O-L-I bonita</td>
+            </tr>
+            <tr>
+                <td>Hoje está ensolarado</td>
+                <td>Hoje ensolarado</td>
+            </tr>
+            <tr>
+                <td>O casaco é preto</td>
+                <td>Casaco preto</td>
+            </tr>
+            </table>
+
+            <p class="texto"> <b>Observação:</b> Os sinais da Libras não marcam gênero. Os sinais não são nem masculinos tampouco femininos</p>
+
+            <img class="mySlidesNone" src="https://i.ibb.co/tMskZyP/cores.png">
+
+            <li>Vídeo explicativo:</li>
+            <br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8CGSZs8eSNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe66bomc8KGuKET0sIjD75nDWmhfdRTHbUBaAyI-q1kA3icjQ/viewform?embedded=true" width="640" height="673" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+        </div>
+       
+    </div>
+    
+    <img id="imgFooter" src="wave.png">
+        <footer>
+                    <img src="logo.png">
+                    <p>Desenvolvido por: Nicoli, Nycolle e Laura</p>
+                    Icons made by <a target="_blank" class="foot" href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a target= "_blank" class="foot" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a><br>
+                    Icons made by <a target="_blank" class="foot" href="https://icons8.com.br">Icons8</a> ícone por <a target="_blank" class="foot" href="https://icons8.com.br/icon/116909/l%C3%ADngua-de-sinais-l">Libras</a>
+        </footer>
+</body>
+</html>
