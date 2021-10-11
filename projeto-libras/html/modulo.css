@@ -292,8 +292,6 @@ span.usenha a{
 .bodyText{
     font-family: Arial, Helvetica, sans-serif;
     justify-content: center;
-    /*background-color: rgba(0, 66, 128, 0.041);
-    border-radius: 10px;*/
     margin-top: 2%;
     margin-left: 20%;
     margin-right: 20%;
@@ -500,4 +498,36 @@ h1{
     list-style-image: none;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 15px;
+}
+
+table, tr, th, td {
+    border: 1px solid rgb(65, 65, 65);
+    border-collapse: collapse;
+    padding: 8px;
+}
+
+.colunaComment{
+    position: relative;
+}
+
+.colunaComment:hover{
+    cursor: pointer;
+}
+  
+.comment{
+    text-align: left;
+    display: none;
+    position: absolute; 
+    z-index:100;
+    border:1px;
+    background-color: rgb(194, 201, 207);
+    border-bottom: 6px outset #1636a0c7;
+    border-radius: 8px;
+    padding: 15px;
+    top: 30px; 
+    left: 20px;
+}
+  
+.colunaComment:hover span.comment{
+    display: block;
 }
