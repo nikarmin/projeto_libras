@@ -354,9 +354,10 @@ h1{
     height: auto;
     width: auto;
     max-width: 500px;
-    max-height: 450px;
+    max-height: 500px;
     margin-bottom: 30px;
     position: relative;
     animation: zoom 1s ease 0s 1 normal forwards;
     pointer-events: none;
+    user-select: none;
 }
