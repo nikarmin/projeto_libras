@@ -8,14 +8,15 @@ router.get('/', (req, res, next) => {
     });
 });
 
+/*
 router.post('/', (req, res, next) => {
-    /*
+    
     const registro = {
         nome: req.body.nome,
         email: req.body.email,
         estado: req.body.estado,
         senha: req.body.senha
-    }*/
+    }
 
     mysql.getConnection((error, conn) => {
         conn.query(
@@ -37,6 +38,6 @@ router.post('/', (req, res, next) => {
             }
         )
     });
-});
+});*/
 
 module.exports = router;
