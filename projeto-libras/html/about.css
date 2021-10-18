@@ -355,6 +355,10 @@ h1{
     pointer-events: none;
 }
 
+.column #gif-logo{
+    border-radius: 50%;
+}
+
 @font-face {
     font-family: greenBeans;
     src: url(Green\ Beans_PersonalUseOnly.ttf);
