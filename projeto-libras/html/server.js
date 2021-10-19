@@ -1,16 +1,15 @@
 // API
 
-
+/*
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
 const app = require('./app');
-/*const server = http.createServer(app);
+const server = http.createServer(app);
 server.listen(3000);*/
 
-
 //INICIANDO SERVER
-
+/*
 http.createServer(function (req, res) {
   var q = url.parse(req.url, true);
   var filename = "." + q.pathname;
@@ -23,11 +22,10 @@ http.createServer(function (req, res) {
     res.write(data);
     return res.end();
   });
-}).listen(8080);
-/*
+}).listen(8080);*/
+
 const express = require('express');
 const router = express.Router();
-
 const app = express();
 const path = require('path');
 const sendMail = require('./email');
@@ -56,9 +54,48 @@ app.post('/email', (req, res) => {
   });
 });
 
-app.get('/', (req, res) => {
+app.get('/about.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/about.html'));
 });
 
+app.get('/home.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/home.html'));
+});
+
+app.get('/moduloUm.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/moduloUm.html'));
+});
+
+app.get('/moduloDois.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/moduloDois.html'));
+});
+
+app.get('/moduloTres.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/moduloTres.html'));
+});
+
+app.get('/moduloQuatro.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/moduloQuatro.html'));
+});
+
+app.get('/moduloCinco.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/moduloCinco.html'));
+});
+
+app.get('/materialInsta.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/materialInsta.html'));
+});
+
+app.get('/materialYtb.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/materialYtb.html'));
+});
+
+app.get('/materialSites.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/materialSites.html'));
+});
+
+app.get('/cadastro.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/cadastro.html'));
+});
+
 app.listen(PORT, () => console.log('Server está começando na porta, ', 8080));
-*/

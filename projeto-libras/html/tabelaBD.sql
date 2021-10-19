@@ -29,7 +29,7 @@ create table Conta(
 create table Desempenho(
     idDesempenho int primary key,
     estrela int,
-    dataDesempenho data,
+    dataDesempenho date,
     descricao varchar(100)
 )
 
@@ -45,7 +45,7 @@ create table Exercicios(
 create table AulasConteudo(
     idAulasConteudo int primary key,
     idAula int not null,
-    constraint idAula foreign key(idAula) references Aulas(idUsidAulauario),
+    constraint idAula foreign key(idAula) references Aulas(idAula),
     idConteudo int not null,
     constraint idConteudo foreign key(idConteudo) references Conteudo(idConteudo)
 )
