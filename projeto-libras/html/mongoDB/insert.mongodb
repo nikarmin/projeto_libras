@@ -1,0 +1,4 @@
+use('PortalLibras')
+
+db.Conta.insertMany([{ "nome" : "Nicoli", "email" : "nikafworks@gmail.com", "cidade" : "Hortolândia", "pontosAcumulados" : "0"},
+                    { "nome" : "Nicoli CTC", "email" : "cc21689@g.unicamp.br", "cidade" : "Hortolândia", "pontosAcumulados" : "0"}])
