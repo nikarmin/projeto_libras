@@ -1,4 +1,6 @@
 use('PortalLibras')
 
-db.Conta.insertMany([{ "nome" : "Nicoli", "email" : "nikafworks@gmail.com", "cidade" : "Hortolândia", "pontosAcumulados" : "0"},
-                    { "nome" : "Nicoli CTC", "email" : "cc21689@g.unicamp.br", "cidade" : "Hortolândia", "pontosAcumulados" : "0"}])
+db.Conta.insertMany([{ "nome" : "Nicoli", "email" : "nikafworks@gmail.com", "senha" : "123456" , "cidade" : "Hortolândia", "pontosAcumulados" : "0"},
+                    { "nome" : "Nicoli CTC", "email" : "cc21689@g.unicamp.br", "senha" : "123456" , "cidade" : "Hortolândia", "pontosAcumulados" : "0"}])
+
+//db.Desempenho.insert({ "estrela" : "1", "data" : "25/10/2021", "descricao" : "Odiei o sistema."})

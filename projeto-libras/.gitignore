@@ -3,3 +3,5 @@ node_modules/
 pedidos.js
 produtos.js
 sqltools_20211018142518_10072.log
+controllers/
+models/
