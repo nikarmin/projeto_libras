@@ -6,7 +6,7 @@ const app = express();
 const path = require('path');
 const sendMail = require('../html/email');
 const { route } = require('./routes');
-
+const bodyParser = require('body-parser');
 const PORT = 3000;
 
 //DATA PARSING
@@ -15,6 +15,8 @@ app.use(express.urlencoded({
   extended: false
 }));
 app.use(express.static(__dirname + '/public'));
+
+require('./controllers/authController')(app);
 
 app.post('/email', (req, res) => {
   //enviar email
@@ -29,6 +31,8 @@ app.post('/email', (req, res) => {
       }
   });
 });
+
+
 
 app.get('/about.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/about.html'));
@@ -80,3 +84,4 @@ app.use('/css', express.static('public'))
 app.use('/modulo.css', express.static(__dirname + '/css'));
 
 app.listen(PORT, () => console.log('Server está começando na porta, ', 3000));
+ 
