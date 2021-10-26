@@ -8,6 +8,7 @@ const sendMail = require('../html/email');
 const { route } = require('./routes');
 const bodyParser = require('body-parser');
 const PORT = 3000;
+const db = require('../html/db')
 
 //DATA PARSING
 
@@ -15,8 +16,6 @@ app.use(express.urlencoded({
   extended: false
 }));
 app.use(express.static(__dirname + '/public'));
-
-require('./controllers/authController')(app);
 
 app.post('/email', (req, res) => {
   //enviar email
@@ -32,8 +31,10 @@ app.post('/email', (req, res) => {
   });
 });
 
+app.use('/', router);
+app.use(express.json());
 
-
+/*
 app.get('/about.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/about.html'));
 });
@@ -76,6 +77,15 @@ app.get('/materialSites.html', (req, res) => {
 
 app.get('/cadastro.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/cadastro.html'));
+});*/
+
+const Conta = db.Mongoose.model('esquemaConta', db.PortalLibras, 'users')
+
+router.get('/cadastro', async (req, res) => {
+  await Conta.find({}).lean().exec(function(e, listaRegistros){
+    res.json(listaRegistros);
+    res.end();
+  });
 });
 
 // fazer carregar css
