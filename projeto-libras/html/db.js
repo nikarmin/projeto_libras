@@ -9,7 +9,7 @@ const conn = mongoose.connection
 
 // Tabela = Collection
 
-const UserSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     username: String,
     email: String,
     password: String,
@@ -18,4 +18,4 @@ const UserSchema = new mongoose.Schema({
 )
 
 const ObjectId = require('mongodb').ObjectId
-module.exports = {Mongoose: mongoose, UserSchema:UserSchema}
+module.exports = {Mongoose: mongoose, UserSchema:userSchema}

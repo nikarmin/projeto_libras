@@ -35,48 +35,49 @@ app.post('/email', (req, res) => {
   });
 });
 
+//app.set('view engine', 'ejs');
 
-app.get('/about.html', (req, res) => {
-  res.sendFile(path.join(__dirname + '/about.html'));
-});
-
-app.get('/home.html', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/home.html'));
 });
 
-app.get('/moduloUm.html', (req, res) => {
+app.get('/about', (req, res) => {
+  res.sendFile(path.join(__dirname + '/about.html'));
+});
+
+app.get('/moduloUm', (req, res) => {
   res.sendFile(path.join(__dirname + '/moduloUm.html'));
 });
 
-app.get('/moduloDois.html', (req, res) => {
+app.get('/moduloDois', (req, res) => {
   res.sendFile(path.join(__dirname + '/moduloDois.html'));
 });
 
-app.get('/moduloTres.html', (req, res) => {
+app.get('/moduloTres', (req, res) => {
   res.sendFile(path.join(__dirname + '/moduloTres.html'));
 });
 
-app.get('/moduloQuatro.html', (req, res) => {
+app.get('/moduloQuatro', (req, res) => {
   res.sendFile(path.join(__dirname + '/moduloQuatro.html'));
 });
 
-app.get('/moduloCinco.html', (req, res) => {
+app.get('/moduloCinco', (req, res) => {
   res.sendFile(path.join(__dirname + '/moduloCinco.html'));
 });
 
-app.get('/materialInsta.html', (req, res) => {
+app.get('/materialInsta', (req, res) => {
   res.sendFile(path.join(__dirname + '/materialInsta.html'));
 });
 
-app.get('/materialYtb.html', (req, res) => {
+app.get('/materialYtb', (req, res) => {
   res.sendFile(path.join(__dirname + '/materialYtb.html'));
 });
 
-app.get('/materialSites.html', (req, res) => {
+app.get('/materialSites', (req, res) => {
   res.sendFile(path.join(__dirname + '/materialSites.html'));
 });
 
-app.get('/cadastro.html', (req, res) => {
+app.get('/cadastro', (req, res) => {
   res.sendFile(path.join(__dirname + '/cadastro.html'));
 });
 
