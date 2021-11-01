@@ -1,4 +1,3 @@
-// ARRUMAR
 
 const mongoose = require('mongoose')
 

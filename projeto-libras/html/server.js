@@ -13,8 +13,13 @@ const { routes } = require('./app');
 
 //DATA PARSING
 
+
 app.use('/', router);
 app.use(express.json());
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.use(express.urlencoded({
   extended: false
@@ -76,18 +81,43 @@ app.get('/materialYtb', (req, res) => {
 app.get('/materialSites', (req, res) => {
   res.sendFile(path.join(__dirname + '/materialSites.html'));
 });
-
+/*
 app.get('/cadastro', (req, res) => {
   res.sendFile(path.join(__dirname + '/cadastro.html'));
 });
-
+*/
 const Users = db.Mongoose.model('esquemaConta', db.UserSchema, 'users')
 
-router.get('/usuarios', async (requisicao, resposta) => {
+router.get('/usuarios', async (req, res) => {
   await Users.find({}).lean().exec(function (e, listaRegistros) {
-  resposta.json(listaRegistros);
-  resposta.end();
+  res.json(listaRegistros);
+  res.end();
   });
+});
+
+app.set('view engine', 'ejs');
+
+router.get('/cadastro', async (req, res) => {
+const listaUsuarios = await Users.find({}).lean().exec();
+res.render('cadastro', {listaUsuarios})
+});
+
+router.post('/incluirusuario', async(req,res) => {
+  let username = req.body.username
+  let email = req.body.email
+  let password = req.body.password
+  let state = req.body.state
+  let usuario = new Users({username, email, password, state})
+  try{
+  await usuario.save()
+  res.redirect('/about')
+  }
+  catch(err){
+  next(err)
+}});
+
+router.get('/incluirusuario', (requisicao, resposta) => {
+  resposta.render('formincluir', { title: 'Cadastro Usuário'})
 });
 
 // fazer carregar css
