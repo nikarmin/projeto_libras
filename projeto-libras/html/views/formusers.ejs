@@ -1,0 +1,43 @@
+<!-- ARQUIVO DE TESTE DO BD! by Prof. Simone -->
+
+<html lang="pt-BR">
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+<h1>
+Lista de usuários
+</h1>
+<table>
+<tr>
+<td><strong>Usuário</strong></td>
+<td><strong>Email</Strong></td>
+<td><strong>Password</strong></td>
+<td><strong>State</Strong></td>
+</tr>
+<%
+listaUsuarios.forEach((esquemaUsers) => {
+%>
+<tr>
+<td>
+<%= esquemaUsers.username %>
+</td>
+<td>
+<%= esquemaUsers.email %>
+</td>
+<td>
+<%= esquemaUsers.password %>
+</td>
+<td>
+<%= esquemaUsers.state %>
+</td>
+<td>
+    <strong>
+        <a href="/excluirusuario/<%=esquemaUsers._id %>">Excluir</a>
+    </strong>
+</td>
+</tr>
+<% }) %>
+</table>
+</body>
+</html>

@@ -13,7 +13,6 @@ const { routes } = require('./app');
 
 //DATA PARSING
 
-
 app.use('/', router);
 app.use(express.json());
 
@@ -81,11 +80,11 @@ app.get('/materialYtb', (req, res) => {
 app.get('/materialSites', (req, res) => {
   res.sendFile(path.join(__dirname + '/materialSites.html'));
 });
-/*
+
 app.get('/cadastro', (req, res) => {
   res.sendFile(path.join(__dirname + '/cadastro.html'));
 });
-*/
+
 const Users = db.Mongoose.model('esquemaConta', db.UserSchema, 'users')
 
 router.get('/usuarios', async (req, res) => {
@@ -97,27 +96,29 @@ router.get('/usuarios', async (req, res) => {
 
 app.set('view engine', 'ejs');
 
-router.get('/cadastro', async (req, res) => {
+router.get('/usuarioscadastrados', async (req, res) => {
 const listaUsuarios = await Users.find({}).lean().exec();
-res.render('cadastro', {listaUsuarios})
+res.render('formusers', {listaUsuarios})
 });
 
-router.post('/incluirusuario', async(req,res) => {
-  let username = req.body.username
-  let email = req.body.email
-  let password = req.body.password
-  let state = req.body.state
+// arrumar dando erro
+router.post('/incluirusuario', async(requisicao,resposta) => {
+  let username = requisicao.body.username 
+  let email = requisicao.body.email
+  let password = requisicao.body.password
+  let state = requisicao.body.state
   let usuario = new Users({username, email, password, state})
   try{
   await usuario.save()
-  res.redirect('/about')
+  resposta.redirect('/usuarioscadastrados')
   }
   catch(err){
   next(err)
 }});
 
-router.get('/incluirusuario', (requisicao, resposta) => {
-  resposta.render('formincluir', { title: 'Cadastro Usuário'})
+/* GET Incluir novo usuário. */
+router.get('/incluirusuario', (req, res) => {
+  res.render('cadastro', { title: 'Cadastro Usuário'})
 });
 
 // fazer carregar css

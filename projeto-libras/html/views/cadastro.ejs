@@ -12,14 +12,14 @@
     
     <div class="cadastro">
         <p>Portal Libras</p>
-        <form class="content" method="POST" action="/cadastro">
-            <h2>Registro:</h2>
+        <form class="content" method="POST" action="/incluirusuario">
+            <h2><%=title%></h2>
             <div class="container">
                 <div id="background"></div>
                 <label for="unome">Nome:</label>
-                <input type="text" placeholder="Digite seu nome..." name="name" required>
+                <input type="text" placeholder="Digite seu nome..." name="username" required>
                 <br>
-                <label for="ucidade">Estado:</label>
+               <label for="ucidade">Estado:</label>
                 <select name="state" id="selectEstado">
                     <option>Selecione seu estado...</option>
                     <option value="ac">Acre (AC)</option>
