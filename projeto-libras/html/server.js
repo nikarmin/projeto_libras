@@ -13,8 +13,12 @@ const { routes } = require('./app');
 
 //DATA PARSING
 
+const Users = db.Mongoose.model('esquemaUsers', db.UserSchema,'users');
+
 app.use('/', router);
 app.use(express.json());
+
+app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -85,8 +89,6 @@ app.get('/cadastro', (req, res) => {
   res.sendFile(path.join(__dirname + '/cadastro.html'));
 });
 
-const Users = db.Mongoose.model('esquemaConta', db.UserSchema, 'users')
-
 router.get('/usuarios', async (req, res) => {
   await Users.find({}).lean().exec(function (e, listaRegistros) {
   res.json(listaRegistros);
@@ -102,15 +104,15 @@ res.render('formusers', {listaUsuarios})
 });
 
 // arrumar dando erro
-router.post('/incluirusuario', async(requisicao,resposta) => {
-  let username = requisicao.body.username 
-  let email = requisicao.body.email
-  let password = requisicao.body.password
-  let state = requisicao.body.state
+router.post('/incluirusuario', async(req,res) => {
+  let username = req.body.username 
+  let email = req.body.email
+  let password = req.body.password
+  let state = req.body.state
   let usuario = new Users({username, email, password, state})
   try{
   await usuario.save()
-  resposta.redirect('/usuarioscadastrados')
+  res.redirect('/usuarioscadastrados')
   }
   catch(err){
   next(err)
@@ -118,7 +120,7 @@ router.post('/incluirusuario', async(requisicao,resposta) => {
 
 /* GET Incluir novo usuário. */
 router.get('/incluirusuario', (req, res) => {
-  res.render('cadastro', { title: 'Cadastro Usuário'})
+  res.render('formincluir', { title: 'Cadastro de Usuário'})
 });
 
 // fazer carregar css
