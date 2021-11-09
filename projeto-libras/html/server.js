@@ -13,6 +13,11 @@ const { routes } = require('./app');
 
 //DATA PARSING
 
+// fazer carregar css
+
+app.use('/css', express.static('css'));
+app.use('/modulo.css', express.static(__dirname + '/css'));
+
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({
@@ -103,7 +108,13 @@ const listaUsuarios = await Users.find({}).lean().exec();
 res.render('formusers', {listaUsuarios})
 });
 
-// arrumar dando erro
+router.get('/excluirusuario/:id',async(requisicao,resposta) => {
+  let id = requisicao.params.id
+  Users.findByIdAndRemove(id, () => {
+  resposta.redirect('/usuarioscadastrados')
+})});
+
+// Cadastrar um usuário
 router.post('/incluirusuario', async(requisicao,resposta) => {
   let username = requisicao.body.username
   let email = requisicao.body.email
@@ -122,11 +133,6 @@ router.post('/incluirusuario', async(requisicao,resposta) => {
 router.get('/incluirusuario', (req, res) => {
   res.render('formincluir', { title: 'Cadastro de Usuário'})
 });
-
-// fazer carregar css
-
-app.use('/css', express.static('public'))
-app.use('/modulo.css', express.static(__dirname + '/css'));
 
 app.listen(PORT, () => console.log('Server está começando na porta, ',3000));
  
