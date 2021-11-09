@@ -13,11 +13,6 @@ const { routes } = require('./app');
 
 //DATA PARSING
 
-const Users = db.Mongoose.model('esquemaUsers', db.UserSchema,'users');
-
-app.use('/', router);
-app.use(express.json());
-
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({
@@ -28,6 +23,11 @@ app.use(express.urlencoded({
   extended: false
 }));
 app.use(express.static(__dirname + '/public'));
+
+app.use('/', router);
+app.use(express.json());
+
+const Users = db.Mongoose.model('esquemaUsers', db.UserSchema,'users');
 
 app.post('/email', (req, res) => {
   //enviar email
@@ -104,15 +104,15 @@ res.render('formusers', {listaUsuarios})
 });
 
 // arrumar dando erro
-router.post('/incluirusuario', async(req,res) => {
-  let username = req.body.username 
-  let email = req.body.email
-  let password = req.body.password
-  let state = req.body.state
+router.post('/incluirusuario', async(requisicao,resposta) => {
+  let username = requisicao.body.username
+  let email = requisicao.body.email
+  let password = requisicao.body.password
+  let state = requisicao.body.state
   let usuario = new Users({username, email, password, state})
   try{
   await usuario.save()
-  res.redirect('/usuarioscadastrados')
+  resposta.redirect('/usuarioscadastrados')
   }
   catch(err){
   next(err)
@@ -128,5 +128,5 @@ router.get('/incluirusuario', (req, res) => {
 app.use('/css', express.static('public'))
 app.use('/modulo.css', express.static(__dirname + '/css'));
 
-app.listen(PORT, () => console.log('Server está começando na porta, ', 3000));
+app.listen(PORT, () => console.log('Server está começando na porta, ',3000));
  
