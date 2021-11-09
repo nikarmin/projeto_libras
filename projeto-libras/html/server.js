@@ -49,43 +49,43 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/home.html'));
 });
 
-app.get('/about', (req, res) => {
+app.get('/about.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/about.html'));
 });
 
-app.get('/moduloUm', (req, res) => {
+app.get('/moduloUm.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/moduloUm.html'));
 });
 
-app.get('/moduloDois', (req, res) => {
+app.get('/moduloDois.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/moduloDois.html'));
 });
 
-app.get('/moduloTres', (req, res) => {
+app.get('/moduloTres.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/moduloTres.html'));
 });
 
-app.get('/moduloQuatro', (req, res) => {
+app.get('/moduloQuatro.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/moduloQuatro.html'));
 });
 
-app.get('/moduloCinco', (req, res) => {
+app.get('/moduloCinco.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/moduloCinco.html'));
 });
 
-app.get('/materialInsta', (req, res) => {
+app.get('/materialInsta.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/materialInsta.html'));
 });
 
-app.get('/materialYtb', (req, res) => {
+app.get('/materialYtb.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/materialYtb.html'));
 });
 
-app.get('/materialSites', (req, res) => {
+app.get('/materialSites.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/materialSites.html'));
 });
 
-app.get('/cadastro', (req, res) => {
+app.get('/cadastro.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/cadastro.html'));
 });
 
