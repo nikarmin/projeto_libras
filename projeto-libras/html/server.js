@@ -13,11 +13,11 @@ const { routes } = require('./app');
 
 //DATA PARSING
 
-// fazer carregar css
+// fazer carregar css só q n funciona
 
 //app.use('/css', express.static('css'));
 
-app.use('css', express.static(__dirname + '/public'));
+app.use(express.static(__dirname));
 
 app.use(bodyParser.json());
 
@@ -134,5 +134,5 @@ router.get('/incluirusuario', (req, res) => {
   res.render('formincluir', { title: 'Cadastro de Usuário'})
 });
 
-app.listen(PORT, () => console.log('Server está começando na porta, ',3000));
+app.listen(PORT, () => console.log('Server está começando na porta,',3000));
  
