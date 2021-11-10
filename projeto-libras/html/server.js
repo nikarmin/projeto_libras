@@ -15,8 +15,9 @@ const { routes } = require('./app');
 
 // fazer carregar css
 
-app.use('/css', express.static('css'));
-app.use('/modulo.css', express.static(__dirname + '/css'));
+//app.use('/css', express.static('css'));
+
+app.use('css', express.static(__dirname + '/public'));
 
 app.use(bodyParser.json());
 
@@ -27,7 +28,6 @@ app.use(bodyParser.urlencoded({
 app.use(express.urlencoded({
   extended: false
 }));
-app.use(express.static(__dirname + '/public'));
 
 app.use('/', router);
 app.use(express.json());
@@ -50,7 +50,7 @@ app.post('/email', (req, res) => {
 
 //app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
+app.get('/home.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/home.html'));
 });
 
