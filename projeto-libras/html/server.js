@@ -10,12 +10,15 @@ const bodyParser = require('body-parser');
 const PORT = 3000;
 const db = require('../html/db');
 const { routes } = require('./app');
+const methodOverride = require('method-override');
 
 //DATA PARSING
 
 // fazer carregar css só q n funciona
 
 //app.use('/css', express.static('css'));
+
+app.use(methodOverride('_method'));
 
 app.use(express.static(__dirname));
 
@@ -33,6 +36,7 @@ app.use('/', router);
 app.use(express.json());
 
 const Users = db.Mongoose.model('esquemaUsers', db.UserSchema,'users');
+const Comments = db.Mongoose.model('esquemaComments', db.CommentsSchema, 'comments');
 
 app.post('/email', (req, res) => {
   //enviar email
@@ -138,5 +142,33 @@ router.get('/incluirusuario', (req, res) => {
   res.render('formincluir', { title: 'Cadastro de Usuário'})
 });
 
+// comments
+/*
+app.set('about', path.join(__dirname, 'public'));
+
+app.get('/about', (req, res) => {
+  Comments.find({}, (err, result) => {
+    if(err){
+      console.log(err);
+      throw err;
+    }
+    res.render('about', {commentList: result});
+  })
+  console.log('home');
+});
+
+app.post('/newComment', (req, res)=>{
+  console.log(req.body);
+  Comments.create(req.body, (err, comments)=>{
+      if (err){
+          console.log(err);
+          throw err;
+      }
+      console.log(comments);
+  })
+  res.redirect('/');
+  console.log('Comment added');
+})
+*/
 app.listen(PORT, () => console.log('Server está começando na porta,',3000));
  

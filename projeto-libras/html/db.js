@@ -23,7 +23,16 @@ const userSchema = new mongoose.Schema({
     },
     state: String
 },{collection: 'users'}
-)
+);
+
+// aba de comentários
+const commentsSchema = new mongoose.Schema({
+    message:{
+        type: String,
+        required: true
+    },
+    state: String
+},{collection: 'comments'})
 
 const ObjectId = require('mongodb').ObjectId
-module.exports = {Mongoose: mongoose, UserSchema:userSchema}
+module.exports = {Mongoose: mongoose, UserSchema:userSchema, CommentsSchema:commentsSchema}
