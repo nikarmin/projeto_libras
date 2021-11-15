@@ -94,6 +94,10 @@ app.get('/cadastro.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/cadastro.html'));
 });
 
+app.get('/sucess.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/sucess.html'));
+});
+
 router.get('/usuarios', async (req, res) => {
   await Users.find({}).lean().exec(function (e, listaRegistros) {
   res.json(listaRegistros);
@@ -123,7 +127,7 @@ router.post('/incluirusuario', async(requisicao,resposta) => {
   let usuario = new Users({username, email, password, state})
   try{
   await usuario.save()
-  resposta.redirect('/usuarioscadastrados')
+  resposta.redirect('/home.html')
   }
   catch(err){
   next(err)

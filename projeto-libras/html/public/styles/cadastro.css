@@ -34,6 +34,10 @@ input:focus{
     outline: 0;
 }
 
+input[name="password"]{
+    -webkit-text-security: disc;
+}
+
 input, select{
     padding: 8px;
     display: inline-block;
