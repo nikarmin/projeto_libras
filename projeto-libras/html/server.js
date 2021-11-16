@@ -10,16 +10,19 @@ const bodyParser = require('body-parser');
 const PORT = 3000;
 const db = require('../html/db');
 const { routes } = require('./app');
-const methodOverride = require('method-override');
+const methodOverride = require('method-override');  //comments
+const session = require('express-session');
+const { UserSchema } = require('../html/db');
+const bcrypt = require('bcryptjs');
 
 //DATA PARSING
 
-// fazer carregar css só q n funciona
-
-//app.use('/css', express.static('css'));
+app.use(session({secret: 'shdauipogbdsklhdasoi'}));
 
 app.use(methodOverride('_method'));
 
+// fazer carregar css só q n funciona
+//app.use('/css', express.static('css'));
 app.use(express.static(__dirname));
 
 app.use(bodyParser.json());
@@ -37,6 +40,7 @@ app.use(express.json());
 
 const Users = db.Mongoose.model('esquemaUsers', db.UserSchema,'users');
 const Comments = db.Mongoose.model('esquemaComments', db.CommentsSchema, 'comments');
+const Login = db.Mongoose.model('esquemaLogin', db.LoginSchema, 'login');
 
 app.post('/email', (req, res) => {
   //enviar email
@@ -54,8 +58,17 @@ app.post('/email', (req, res) => {
 
 //app.set('view engine', 'ejs');
 
+// GETTERS
+
 app.get('/home.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/home.html'));
+
+  if(req.session.login){
+    res.render('sucess');
+  }
+  else{
+    res.render('cadastro');
+  }
 });
 
 app.get('/about.html', (req, res) => {
@@ -109,6 +122,146 @@ router.get('/usuarios', async (req, res) => {
   });
 });
 
+//POSTTERS
+
+//TENTANDO O LOGIN AQUI FML e não dá certo ve se pode
+router.post('/home.html', async(requisicao,resposta) => {
+  let email = requisicao.body.email
+  let password = requisicao.body.password
+  const auth = await Users.findOne({email});
+  try{
+    //if(auth && bcrypt.compareSync(password, auth.hash))
+  if(Users.find({email: {email}, password: {password}})){
+    requisicao.session.login = email;
+    resposta.redirect('/sucess.html');
+    console.log(Users.find({email: {email}, password: {password}}));
+  }
+  //resposta.redirect('/sucess.html')
+  else{
+    console.log("deus pq?")
+  }
+}
+  catch(err){
+  next(err)
+}});
+
+router.post('/about.html', async(requisicao,resposta) => {
+  let email = requisicao.body.email
+  let password = requisicao.body.password
+  let usuario = new Login({email, password})
+  try{
+  await usuario.save()
+  resposta.redirect('/home.html')
+  //console.log(email)
+  }
+  catch(err){
+  next(err)
+}});
+
+router.post('/moduloUm.html', async(requisicao,resposta) => {
+  let email = requisicao.body.email
+  let password = requisicao.body.password
+  let usuario = new Login({email, password})
+  try{
+  await usuario.save()
+  resposta.redirect('/home.html')
+  //console.log(email)
+  }
+  catch(err){
+  next(err)
+}});
+
+router.post('/moduloDois.html', async(requisicao,resposta) => {
+  let email = requisicao.body.email
+  let password = requisicao.body.password
+  let usuario = new Login({email, password})
+  try{
+  await usuario.save()
+  resposta.redirect('/home.html')
+  //console.log(email)
+  }
+  catch(err){
+  next(err)
+}});
+
+router.post('/moduloTres.html', async(requisicao,resposta) => {
+  let email = requisicao.body.email
+  let password = requisicao.body.password
+  let usuario = new Login({email, password})
+  try{
+  await usuario.save()
+  resposta.redirect('/home.html')
+  //console.log(email)
+  }
+  catch(err){
+  next(err)
+}});
+
+router.post('/moduloQuatro.html', async(requisicao,resposta) => {
+  let email = requisicao.body.email
+  let password = requisicao.body.password
+  let usuario = new Login({email, password})
+  try{
+  await usuario.save()
+  resposta.redirect('/home.html')
+  //console.log(email)
+  }
+  catch(err){
+  next(err)
+}});
+
+router.post('/moduloCinco.html', async(requisicao,resposta) => {
+  let email = requisicao.body.email
+  let password = requisicao.body.password
+  let usuario = new Login({email, password})
+  try{
+  await usuario.save()
+  resposta.redirect('/home.html')
+  //console.log(email)
+  }
+  catch(err){
+  next(err)
+}});
+
+router.post('/materialInsta.html', async(requisicao,resposta) => {
+  let email = requisicao.body.email
+  let password = requisicao.body.password
+  let usuario = new Login({email, password})
+  try{
+  await usuario.save()
+  resposta.redirect('/home.html')
+  //console.log(email)
+  }
+  catch(err){
+  next(err)
+}});
+
+router.post('/materialYtb.html', async(requisicao,resposta) => {
+  let email = requisicao.body.email
+  let password = requisicao.body.password
+  let usuario = new Login({email, password})
+  try{
+  await usuario.save()
+  resposta.redirect('/home.html')
+  //console.log(email)
+  }
+  catch(err){
+  next(err)
+}});
+
+router.post('/materialSites.html', async(requisicao,resposta) => {
+  let email = requisicao.body.email
+  let password = requisicao.body.password
+  let usuario = new Login({email, password})
+  try{
+  await usuario.save()
+  resposta.redirect('/home.html')
+  //console.log(email)
+  }
+  catch(err){
+  next(err)
+}});
+
 app.set('view engine', 'ejs');
 
 router.get('/usuarioscadastrados', async (req, res) => {
@@ -142,7 +295,7 @@ router.get('/incluirusuario', (req, res) => {
   res.render('formincluir', { title: 'Cadastro de Usuário'})
 });
 
-// comments
+// comments será q um dia isso vai dar certo?
 /*
 app.set('about', path.join(__dirname, 'public'));
 

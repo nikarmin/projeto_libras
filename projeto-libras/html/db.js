@@ -32,7 +32,19 @@ const commentsSchema = new mongoose.Schema({
         required: true
     },
     state: String
-},{collection: 'comments'})
+},{collection: 'comments'});
+
+const loginSchema = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    state: String
+},{collection:'login'});
 
 const ObjectId = require('mongodb').ObjectId
-module.exports = {Mongoose: mongoose, UserSchema:userSchema, CommentsSchema:commentsSchema}
+module.exports = {Mongoose: mongoose, UserSchema:userSchema, CommentsSchema:commentsSchema, LoginSchema:loginSchema}

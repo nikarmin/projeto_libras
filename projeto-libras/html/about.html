@@ -60,14 +60,14 @@
             <a onclick="btnLogin()"><img class="log" src="user.png"></a>
                     
             <div id="painelLogin" class="painel">
-                <form class="content" method="POST" action="">
+                <form class="content" method="POST" action="/about.html">
                     <h1>LOGIN</h1>
                     <div class="container">
                         <label for="uemail">Email:</label>
-                        <input type="text" placeholder="Digite seu email..." name="uemail" required>
+                        <input type="text" placeholder="Digite seu email..." name="email" required>
                         <br>
                         <label for="usenha">Senha:</label>
-                        <input type="text" id="login" placeholder="Digite sua senha..." name="usenha" required>
+                        <input type="text" id="login" placeholder="Digite sua senha..." name="senha" required>
                         <br>
                         <button type="submit">LOGIN</button>
                         <button type="button" onclick="document.getElementById('painelLogin').style.display='none'" id="cancelBtn">CANCELAR</button>
