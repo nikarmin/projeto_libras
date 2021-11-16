@@ -14,6 +14,7 @@ const methodOverride = require('method-override');  //comments
 const session = require('express-session');
 const { UserSchema } = require('../html/db');
 const bcrypt = require('bcryptjs');
+const { constants } = require('buffer');
 
 //DATA PARSING
 
@@ -126,141 +127,124 @@ router.get('/usuarios', async (req, res) => {
 
 //TENTANDO O LOGIN AQUI FML e não dá certo ve se pode
 router.post('/home.html', async(requisicao,resposta) => {
-  let email = requisicao.body.email
-  let password = requisicao.body.password
-  const auth = await Users.findOne({email});
-  try{
-    //if(auth && bcrypt.compareSync(password, auth.hash))
-  if(Users.find({email: {email}, password: {password}})){
-    requisicao.session.login = email;
+  const email = requisicao.body.email;
+  const password = requisicao.body.password;
+
+  if(await Users.findOne({email}) && await Users.findOne({password}))
     resposta.redirect('/sucess.html');
-    console.log(Users.find({email: {email}, password: {password}}));
-  }
-  //resposta.redirect('/sucess.html')
-  else{
-    console.log("deus pq?")
-  }
-}
-  catch(err){
-  next(err)
-}});
+
+  else
+    resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
+
+});
 
 router.post('/about.html', async(requisicao,resposta) => {
   let email = requisicao.body.email
   let password = requisicao.body.password
   let usuario = new Login({email, password})
-  try{
-  await usuario.save()
-  resposta.redirect('/home.html')
-  //console.log(email)
-  }
-  catch(err){
-  next(err)
-}});
+  
+  if(await Users.findOne({email}) && await Users.findOne({password}))
+    resposta.redirect('/sucess.html');
+
+  else
+    resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
+});
 
 router.post('/moduloUm.html', async(requisicao,resposta) => {
   let email = requisicao.body.email
   let password = requisicao.body.password
   let usuario = new Login({email, password})
-  try{
-  await usuario.save()
-  resposta.redirect('/home.html')
-  //console.log(email)
-  }
-  catch(err){
-  next(err)
-}});
+  
+  if(await Users.findOne({email}) && await Users.findOne({password}))
+    resposta.redirect('/sucess.html');
+
+  else
+    resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
+});
 
 router.post('/moduloDois.html', async(requisicao,resposta) => {
   let email = requisicao.body.email
   let password = requisicao.body.password
   let usuario = new Login({email, password})
-  try{
-  await usuario.save()
-  resposta.redirect('/home.html')
-  //console.log(email)
-  }
-  catch(err){
-  next(err)
-}});
+  
+  if(await Users.findOne({email}) && await Users.findOne({password}))
+    resposta.redirect('/sucess.html');
+
+  else
+    resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
+});
 
 router.post('/moduloTres.html', async(requisicao,resposta) => {
   let email = requisicao.body.email
   let password = requisicao.body.password
   let usuario = new Login({email, password})
-  try{
-  await usuario.save()
-  resposta.redirect('/home.html')
-  //console.log(email)
-  }
-  catch(err){
-  next(err)
-}});
+  
+  if(await Users.findOne({email}) && await Users.findOne({password}))
+    resposta.redirect('/sucess.html');
+
+  else
+    resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
+});
 
 router.post('/moduloQuatro.html', async(requisicao,resposta) => {
   let email = requisicao.body.email
   let password = requisicao.body.password
   let usuario = new Login({email, password})
-  try{
-  await usuario.save()
-  resposta.redirect('/home.html')
-  //console.log(email)
-  }
-  catch(err){
-  next(err)
-}});
+  
+  if(await Users.findOne({email}) && await Users.findOne({password}))
+    resposta.redirect('/sucess.html');
+
+  else
+    resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
+});
 
 router.post('/moduloCinco.html', async(requisicao,resposta) => {
   let email = requisicao.body.email
   let password = requisicao.body.password
   let usuario = new Login({email, password})
-  try{
-  await usuario.save()
-  resposta.redirect('/home.html')
-  //console.log(email)
-  }
-  catch(err){
-  next(err)
-}});
+  
+  if(await Users.findOne({email}) && await Users.findOne({password}))
+    resposta.redirect('/sucess.html');
+
+  else
+    resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
+});
 
 router.post('/materialInsta.html', async(requisicao,resposta) => {
   let email = requisicao.body.email
   let password = requisicao.body.password
   let usuario = new Login({email, password})
-  try{
-  await usuario.save()
-  resposta.redirect('/home.html')
-  //console.log(email)
-  }
-  catch(err){
-  next(err)
-}});
+  
+  if(await Users.findOne({email}) && await Users.findOne({password}))
+    resposta.redirect('/sucess.html');
+
+  else
+    resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
+});
 
 router.post('/materialYtb.html', async(requisicao,resposta) => {
   let email = requisicao.body.email
   let password = requisicao.body.password
   let usuario = new Login({email, password})
-  try{
-  await usuario.save()
-  resposta.redirect('/home.html')
-  //console.log(email)
-  }
-  catch(err){
-  next(err)
-}});
+  
+  if(await Users.findOne({email}) && await Users.findOne({password}))
+    resposta.redirect('/sucess.html');
+
+  else
+    resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
+});
 
 router.post('/materialSites.html', async(requisicao,resposta) => {
   let email = requisicao.body.email
   let password = requisicao.body.password
   let usuario = new Login({email, password})
-  try{
-  await usuario.save()
-  resposta.redirect('/home.html')
-  //console.log(email)
-  }
-  catch(err){
-  next(err)
-}});
+  
+  if(await Users.findOne({email}) && await Users.findOne({password}))
+    resposta.redirect('/sucess.html');
+
+  else
+    resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
+});
 
 app.set('view engine', 'ejs');
 
@@ -283,11 +267,13 @@ router.post('/incluirusuario', async(requisicao,resposta) => {
   let state = requisicao.body.state
   let usuario = new Users({username, email, password, state})
   try{
+    if(await Users.findOne({email}))
+      return resposta.status(400).send({error : 'User already exists'})
   await usuario.save()
   resposta.redirect('/home.html')
   }
   catch(err){
-  next(err)
+  console.log(err)
 }});
 
 /* GET Incluir novo usuário. */
