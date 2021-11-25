@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/web-app')
 
-const conn = mongoose.connection
+const conn = mongoose.connection;
 
 // Tabela = Collection
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação de Senha</title>
+</head>
+<body>
+    <!-- Formulário para a recuperação de senhas -->
+    <h1>Recuperação de Senha:</h1>
+    <form action="/forgot.html" method="POST">
+      <p>Digite o email de cadastro abaixo para receber novas credenciais de acesso:</p>
+      <input id="email" name="email" type="text" />
+      <input type="submit" value="Send" />
+    </form>
+    <p>Ainda não se cadastrou? <a href="/cadastro.html">Clique aqui</a> para se cadastrar!.</p>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $("form").on("submit", e => {
+        e.preventDefault();
+
+        const email = $("#email")
+          .val()
+          .trim();
+
+        const data = {
+          email
+        };
+
+        $.post("/forgot.html", data)
+          .catch(() => {
+            window.location.href = "/error";
+          });
+      });
+
+    </script>
+
+</html>

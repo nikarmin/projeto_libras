@@ -5,6 +5,7 @@ const router = express.Router();
 const app = express();
 const path = require('path');
 const sendMail = require('../html/email');
+const send = require('../html/mail');
 const { route } = require('./routes');
 const bodyParser = require('body-parser');
 const PORT = 3000;
@@ -116,6 +117,10 @@ app.get('/sucess.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/sucess.html'));
 });
 
+app.get('/forgot.html', (req, res) =>{
+  res.sendFile(path.join(__dirname + '/forgot.html'));
+})
+
 router.get('/usuarios', async (req, res) => {
   await Users.find({}).lean().exec(function (e, listaRegistros) {
   res.json(listaRegistros);
@@ -131,7 +136,7 @@ router.post('/home.html', async(requisicao,resposta) => {
   const password = requisicao.body.password;
 
   if(await Users.findOne({email}) && await Users.findOne({password}))
-    resposta.redirect('/sucess.html');
+    resposta.redirect('/home.html');
 
   else
     resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
@@ -144,7 +149,7 @@ router.post('/about.html', async(requisicao,resposta) => {
   let usuario = new Login({email, password})
   
   if(await Users.findOne({email}) && await Users.findOne({password}))
-    resposta.redirect('/sucess.html');
+    resposta.redirect('/home.html');
 
   else
     resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
@@ -156,7 +161,7 @@ router.post('/moduloUm.html', async(requisicao,resposta) => {
   let usuario = new Login({email, password})
   
   if(await Users.findOne({email}) && await Users.findOne({password}))
-    resposta.redirect('/sucess.html');
+    resposta.redirect('/home.html');
 
   else
     resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
@@ -168,7 +173,7 @@ router.post('/moduloDois.html', async(requisicao,resposta) => {
   let usuario = new Login({email, password})
   
   if(await Users.findOne({email}) && await Users.findOne({password}))
-    resposta.redirect('/sucess.html');
+    resposta.redirect('/home.html');
 
   else
     resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
@@ -180,7 +185,7 @@ router.post('/moduloTres.html', async(requisicao,resposta) => {
   let usuario = new Login({email, password})
   
   if(await Users.findOne({email}) && await Users.findOne({password}))
-    resposta.redirect('/sucess.html');
+    resposta.redirect('/home.html');
 
   else
     resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
@@ -192,7 +197,7 @@ router.post('/moduloQuatro.html', async(requisicao,resposta) => {
   let usuario = new Login({email, password})
   
   if(await Users.findOne({email}) && await Users.findOne({password}))
-    resposta.redirect('/sucess.html');
+    resposta.redirect('/home.html');
 
   else
     resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
@@ -204,7 +209,7 @@ router.post('/moduloCinco.html', async(requisicao,resposta) => {
   let usuario = new Login({email, password})
   
   if(await Users.findOne({email}) && await Users.findOne({password}))
-    resposta.redirect('/sucess.html');
+    resposta.redirect('/home.html');
 
   else
     resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
@@ -216,7 +221,7 @@ router.post('/materialInsta.html', async(requisicao,resposta) => {
   let usuario = new Login({email, password})
   
   if(await Users.findOne({email}) && await Users.findOne({password}))
-    resposta.redirect('/sucess.html');
+    resposta.redirect('/home.html');
 
   else
     resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
@@ -228,7 +233,7 @@ router.post('/materialYtb.html', async(requisicao,resposta) => {
   let usuario = new Login({email, password})
   
   if(await Users.findOne({email}) && await Users.findOne({password}))
-    resposta.redirect('/sucess.html');
+    resposta.redirect('/home.html');
 
   else
     resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
@@ -240,7 +245,7 @@ router.post('/materialSites.html', async(requisicao,resposta) => {
   let usuario = new Login({email, password})
   
   if(await Users.findOne({email}) && await Users.findOne({password}))
-    resposta.redirect('/sucess.html');
+    resposta.redirect('/home.html');
 
   else
     resposta.status(400).send({error : 'Invalid email or password'}); // ERRORR!!!
@@ -252,6 +257,67 @@ router.get('/usuarioscadastrados', async (req, res) => {
 const listaUsuarios = await Users.find({}).lean().exec();
 res.render('formusers', {listaUsuarios})
 });
+
+router.get('/forgot', async (req, res) => {
+  res.render('forgot', {})
+  });
+
+// Recuperação de senha
+
+function changePassword(email, password){
+  const cryptPwd = bcrypt.hashSync(password, 10)
+  Users.updateOne({email}, {$set:{password: cryptPwd}})
+}
+
+app.post('/forgot.html', (req, res) => {
+  const email = req.body;
+  send(email, function(err, data) {
+    if(err){
+      res.status(500).json({message: 'Erro interno'});
+    } else{
+      res.json({message: 'Email enviado'});
+    }
+  })
+})
+
+/*router.post('/forgot.html', async(requisicao,resposta) => {
+  if(await Users.findOne({email})){
+    let email = requisicao.body.email
+    const newpass = require('./passwordGenerator').generatePassword()
+    changePassword(email, newpass)
+    require('./mail')(email, 'Recuperação de Senha', 'Olá '+doc.username+', sua nova senha é '+newpass)
+    res.redirect('/sucess.html')
+  }
+  else
+  console.log('puts')
+  })*/
+
+  /*
+  app.post('/email', (req, res) => {
+  //enviar email
+  const { email, text } = req.body;
+  console.log('Data: ', req.body);
+
+  sendMail(email, text, function(err, data) {
+      if(err){
+        res.status(500).json({message: 'Erro interno'});
+      } else{
+        res.json({message: 'Email enviado'});
+      }
+  });
+});
+  */
+
+/*router.post('/forgot', function(req, res, next) {
+  await Users.findOne(req.body.email, (err, doc) =>{
+    const email = req.body.email;
+    if(err || !doc) res.redirect('/home.html')
+    const newpass = require('./passwordGenerator').generatePassword()
+    changePassword(email, newpass)
+    require('./mail')(email, 'Recuperação de Senha', 'Olá '+doc.username+', sua nova senha é '+newpass)
+    res.redirect('/sucess.html')
+  })
+})*/
 
 router.get('/excluirusuario/:id',async(requisicao,resposta) => {
   let id = requisicao.params.id
