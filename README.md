@@ -1,4 +1,4 @@
-# Projeto Libras - Prática Profissional I
+# Projeto Libras - Práticas Profissionais I
 
 ![logo](https://user-images.githubusercontent.com/80519705/134438083-c6bc0a6d-c044-4d82-ad1b-3ddabe64da47.gif)
 
